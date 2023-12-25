@@ -15,7 +15,7 @@ import "react-confirm-alert/src/react-confirm-alert.css";
 const AdminProductUpdate = () => {
   const params = useParams();
 
-  const { data: productData } = useGetProductByIdQuery(params._id);
+  const { data: productData, refetch } = useGetProductByIdQuery(params._id);
 
   // console.log(productData);
 
@@ -25,16 +25,16 @@ const AdminProductUpdate = () => {
     productData?.description || ""
   );
   const [price, setPrice] = useState(productData?.price || "");
-  const [category, setCategory] = useState(productData?.category || "");
+  const [category, setCategory] = useState(productData?.category.name || "");
   const [quantity, setQuantity] = useState(productData?.quantity || "");
   const [brand, setBrand] = useState(productData?.brand || "");
-  // const [stock, setStock] = useState(productData?.countInStock);
+  
 
   // hook
   const navigate = useNavigate();
 
   // Fetch categories using RTK Query
-  const { data: categories = [], refetch } = useFetchCategoriesQuery();
+  const { data: categories = [] } = useFetchCategoriesQuery();
 
   const [uploadProductImage] = useUploadProductImageMutation();
 
@@ -55,6 +55,10 @@ const AdminProductUpdate = () => {
       setImage(productData.image);
     }
   }, [productData]);
+
+  useEffect(() => {
+    refetch()
+  },[])
 
   const uploadFileHandler = async (e) => {
     const formData = new FormData();
@@ -85,7 +89,7 @@ const AdminProductUpdate = () => {
       formData.append("category", category);
       formData.append("quantity", quantity);
       formData.append("brand", brand);
-      // formData.append("countInStock", stock);
+      
 
       // Update product using the RTK Query mutation
       const data = await updateProduct({ productId: params._id, formData });
@@ -100,6 +104,7 @@ const AdminProductUpdate = () => {
           position: toast.POSITION.TOP_RIGHT,
           autoClose: 2000,
         });
+        refetch();
         navigate("/admin/allproductslist");
       }
     } catch (err) {
@@ -148,6 +153,7 @@ const confirmDelete = () => {
     ],
   });
 };
+
 
 
   
@@ -246,20 +252,22 @@ const confirmDelete = () => {
                     type="text"
                     className="p-4 mb-3 w-[30rem] border rounded-lg bg-[#101011] text-white "
                     value={quantity}
-                    // onChange={(e) => setStock(e.target.value)}
+
                     readOnly
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="">Category</label> <br />
+                  <label htmlFor=""> Category </label> <br />
                   <select
+                  value={category}
                    className="p-4 mb-3 w-[30rem] border rounded-lg bg-[#101011] text-white mr-[5rem]"
                     onChange={(e) => setCategory(e.target.value)}
                              >
-                            <option value="" disabled selected>Choose Category</option>
+                            
                           {categories?.map((c) => (
-                          <option key={c._id} value={c._id}>
+                            
+                          <option key={c._id} value={c._id} >
                            {c.name}
                            </option>
                             ))}
