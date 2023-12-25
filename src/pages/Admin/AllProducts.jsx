@@ -2,13 +2,12 @@ import { Link } from "react-router-dom";
 import moment from "moment";
 import { useAllProductsQuery } from "../../redux/api/productApiSlice";
 import AdminMenu from "./AdminMenu";
-// import { useDispatch } from "react-redux";
-import { useEffect } from "react";
-// import { setProducts } from "../../redux/features/productSlice";
+import { useEffect, useState } from "react";
+
 
 const AllProducts = () => {
   const { data: products, isLoading, isError, refetch} = useAllProductsQuery();
-  // const dispatch = useDispatch();
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(()=> {
     refetch()
@@ -21,16 +20,38 @@ const AllProducts = () => {
     return <div>Error loading products</div>;
   }
 
+
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const filteredProducts = products.filter(
+    product =>
+      product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      // product.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      product.brand.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <>
       <div className="container mx-[9rem]">
         <div className="flex flex-col  md:flex-row">
           <div className="p-3">
             <div className="ml-[2rem] text-xl font-bold h-12">
-              All Products ({products.length})
+              All Products ({filteredProducts.length})
+            </div>
+            
+            <div className="one">
+            <input
+              type="text"
+              placeholder="Search by name, category, or brand"
+              className="p-4 mb-3 w-[30rem] border rounded-lg bg-[#101011] text-white mr-[5rem]"
+              value={searchTerm}
+              onChange={handleSearchChange}
+            />
             </div>
             <div className="flex flex-wrap justify-around items-center">
-              {products.map((product) => (
+              {filteredProducts.map((product) => (
                 <div
                   key={product._id}
                   
