@@ -11,3 +11,7 @@ input,
 textarea {
   color: #000;
 }
+
+.bordertest {
+  border: 1px solid red;
+}

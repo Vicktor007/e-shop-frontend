@@ -22,6 +22,7 @@ const Order = () => {
     error,
   } = useGetOrderDetailsQuery(orderId);
 
+  console.log(order)
   const [payOrder, { isLoading: loadingPay }] = usePayOrderMutation();
   const [deliverOrder, { isLoading: loadingDeliver }] =
     useDeliverOrderMutation();
@@ -194,7 +195,7 @@ const Order = () => {
           <span>$ {order.totalPrice}</span>
         </div>
 
-        {!order.isPaid && (
+        {order.paymentMethod === "PayPal" ? (<div>{!order.isPaid && (
           <div>
             {loadingPay && <Loader />}{" "}
             {isPending ? (
@@ -211,7 +212,28 @@ const Order = () => {
               </div>
             )}
           </div>
-        )}
+        )}</div>) : ("Stripe Payment")}
+
+        
+        {/* {!order.isPaid && (
+          <div>
+            {loadingPay && <Loader />}{" "}
+            {isPending ? (
+              <Loader />
+            ) : (
+              <div>
+                <div>
+                  <PayPalButtons
+                    createOrder={createOrder}
+                    onApprove={onApprove}
+                    onError={onError}
+                  ></PayPalButtons>
+                </div>
+              </div>
+            )}
+          </div>
+        )} */}
+       
 
         {loadingDeliver && <Loader />}
         {userInfo && userInfo.isAdmin && order.isPaid && !order.isDelivered && (

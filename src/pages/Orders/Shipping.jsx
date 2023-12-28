@@ -11,7 +11,7 @@ const Shipping = () => {
   const cart = useSelector((state) => state.cart);
   const { shippingAddress } = cart;
 
-  const [paymentMethod, setPaymentMethod] = useState("PayPal");
+  const [paymentMethod, setPaymentMethod] = useState("");
   const [address, setAddress] = useState(shippingAddress.address || "");
   const [city, setCity] = useState(shippingAddress.city || "");
   const [postalCode, setPostalCode] = useState(
@@ -101,6 +101,17 @@ const Shipping = () => {
                 />
 
                 <span className="ml-2">PayPal or Credit Card</span>
+              </label>
+              <label className="inline-flex items-center">
+                <input
+                  type="radio"
+                  className="form-radio text-pink-500"
+                  name="paymentMethod"
+                  value="Stripe"
+                  onChange={(e) => setPaymentMethod(e.target.value)}
+                />
+
+                <span className="ml-2">Stripe</span>
               </label>
             </div>
           </div>

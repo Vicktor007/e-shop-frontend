@@ -22,8 +22,8 @@ const UserOrder = () => {
               <td className="py-2">ID</td>
               <td className="py-2">DATE</td>
               <td className="py-2">TOTAL</td>
-              <td className="py-2">PAID</td>
-              <td className="py-2">DELIVERED</td>
+              <td className="py-2 text-center">PAID</td>
+              <td className="py-2 text-center bordertest">DELIVERED</td>
               <td className="py-2"></td>
             </tr>
           </thead>
