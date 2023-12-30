@@ -42,7 +42,7 @@ import Errorpage from "./pages/Auth/Errorpage.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<App />}>
+    <Route path="/" element={<App />} errorElement={<Errorpage/>}>
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/forgotpassword" element={<ForgotPassword />} />
@@ -52,7 +52,7 @@ const router = createBrowserRouter(
       <Route path="/product/:id" element={<ProductDetails />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/shop" element={<Shop />} />
-      <Route path="*" element={<Errorpage/>} />
+      
 
       {/* Registered users */}
       <Route path="" element={<PrivateRoute />}>
