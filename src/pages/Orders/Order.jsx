@@ -171,9 +171,9 @@ const Order = () => {
           </p>
 
           {order.isPaid ? (
-            <Messsage variant="success">Paid on {order.paidAt}</Messsage>
+            <div className="bg-green-100 text-green-800 p-4 rounded">Paid on {order.paidAt}</div>
           ) : (
-            <Messsage variant="danger">Not paid</Messsage>
+            <div className="bg-red-100 text-red-800 p-4 rounded">Not paid</div>
           )}
         </div>
 
