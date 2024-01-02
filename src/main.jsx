@@ -39,6 +39,7 @@ import AdminDashboard from "./pages/Admin/AdminDashboard.jsx";
 import ForgotPassword from "./pages/Auth/ForgotPassword.jsx";
 import ResetPassword from "./pages/Auth/ResetPassword.jsx";
 import Errorpage from "./pages/Auth/Errorpage.jsx";
+import Message from "./components/Message.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -52,6 +53,7 @@ const router = createBrowserRouter(
       <Route path="/product/:id" element={<ProductDetails />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/shop" element={<Shop />} />
+      <Route path="/error" element={<Message />} />
       
 
       {/* Registered users */}
