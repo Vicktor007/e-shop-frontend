@@ -263,13 +263,3 @@ const Order = () => {
 
 export default Order;
 
-// import React from 'react'
-// import "./order.css"
-
-// const Order = () => {
-//   return (
-//     <div className='placeholder'>coming soon...</div>
-//   )
-// }
-
-// export default Order
