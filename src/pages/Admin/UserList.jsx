@@ -8,7 +8,7 @@ import {
   useUpdateUserMutation,
 } from "../../redux/api/usersApiSlice";
 import { toast } from "react-toastify";
-// ⚠️⚠️⚠️ don't forget this ⚠️⚠️⚠️⚠️
+
 import AdminMenu from "./AdminMenu";
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
@@ -113,7 +113,7 @@ const confirmDelete = (id) => {
       {isLoading ? (
         <Loader />
       ) : error ? (
-        <Message variant="danger">
+        <Message variant="error">
           {error?.data?.message || error.error}
         </Message>
       ) : (
