@@ -19,7 +19,7 @@ const UserOrder = () => {
       {isLoading ? (
         <Loader />
       ) : error ? (
-        <Message variant="danger">
+        <Message variant="error">
           {error?.data?.message || error.error}
         </Message>
       ) : (

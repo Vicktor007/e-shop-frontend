@@ -53,7 +53,7 @@ const router = createBrowserRouter(
       <Route path="/product/:id" element={<ProductDetails />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/shop" element={<Shop />} />
-      <Route path="/error" element={<Message />} />
+      {/* <Route path="/error" element={<Message />} /> */}
       
 
       {/* Registered users */}

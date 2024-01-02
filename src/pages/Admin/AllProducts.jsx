@@ -3,10 +3,11 @@ import moment from "moment";
 import { useAllProductsQuery } from "../../redux/api/productApiSlice";
 import AdminMenu from "./AdminMenu";
 import { useEffect, useState } from "react";
+import Message from "../../components/Message";
 
 
 const AllProducts = () => {
-  const { data: products, isLoading, isError, refetch} = useAllProductsQuery();
+  const { data: products, isLoading, error, refetch} = useAllProductsQuery();
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(()=> {
@@ -16,8 +17,10 @@ const AllProducts = () => {
     return <div>Loading...</div>;
   }
 
-  if (isError) {
-    return <div>Error loading products</div>;
+  if (error) {
+    return <Message variant="error">
+    {error?.data?.message || error.error}
+  </Message>;
   }
 
 
