@@ -169,7 +169,7 @@ const Shop = () => {
             <h2 className="h4 text-center mb-2">{products?.length} Products</h2>
             <div className="flex flex-wrap">
               {products.length === 0 ? (
-                <Loader />
+                "No products"
               ) : (
                 products?.map((p) => (
                   <div className="p-3" key={p._id}>
