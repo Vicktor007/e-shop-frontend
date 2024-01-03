@@ -11,13 +11,13 @@ const Header = () => {
   }
 
   if (error) {
-    return <h1>ERROR</h1>;
+    return <h1 className="text-center">ERROR</h1>;
   }
 
   return (
     <>
-      <div className="flex justify-around">
-        <div className="xl:block lg:hidden md:hidden:sm:hidden">
+      <div className="flex justify-evenly flex-wrap-reverse">
+        <div className="xl:block">
           <div className="grid grid-cols-2">
             {data.map((product) => (
               <div key={product._id}>

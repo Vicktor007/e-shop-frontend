@@ -25,7 +25,7 @@ const AdminProductUpdate = () => {
     productData?.description || ""
   );
   const [price, setPrice] = useState(productData?.price || "");
-  const [category, setCategory] = useState(productData?.category.name || "");
+  const [category, setCategory] = useState(productData?.category || "");
   const [quantity, setQuantity] = useState(productData?.quantity || "");
   const [brand, setBrand] = useState(productData?.brand || "");
   

@@ -10,9 +10,9 @@ export default function Errorpage() {
         <div className='alert-danger-error d-flex-error flex-column'>
       <h1>Oops!</h1>
       <p>Sorry, an unexpected error has occured.</p>
-      <i>
-      {error} 
-      {error.message}</i>
+     
+      {/* {error}  */}
+      {error.message}
     </div>
     </div>
   )
