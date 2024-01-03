@@ -12,7 +12,7 @@ const Favorites = () => {
       </h1>
 
       <div className="flex flex-wrap">
-        {favorites.length === 0 ? (<div> No favorites yet</div>): (favorites.map((product) => (
+        {favorites.length === 0 ? (<div className="ml-12"> No favorites yet</div>): (favorites.map((product) => (
           <Product key={product._id} product={product} />
         )))}
       </div>
