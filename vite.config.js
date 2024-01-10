@@ -7,7 +7,9 @@ export default defineConfig({
   server: {
     proxy: {
       "/api/": "https://e-shop-api-bnt6.onrender.com",
-      "/uploads/": "http://localhost:5000",
+      "/uploads/": "https://e-shop-api-bnt6.onrender.com",
     },
   },
 });
+
+// https://e-shop-api-bnt6.onrender.com
