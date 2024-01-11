@@ -172,7 +172,7 @@ const confirmDelete = () => {
                 <img
                   src={image}
                   alt="product"
-                  className="block mx-auto w-full h-[40%]"
+                  className="block mx-auto h-[20%]"
                 />
               </div>
             )}

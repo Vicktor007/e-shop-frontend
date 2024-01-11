@@ -62,6 +62,7 @@ const ProductList = () => {
       toast.success(res.message);
       setImage(res.image);
       setImageUrl(res.image);
+      console.log(image)
     } catch (error) {
       toast.error(error?.data?.message || error.error);
     }
@@ -79,7 +80,7 @@ const ProductList = () => {
               <img
                 src={imageUrl}
                 alt="product"
-                className="block mx-auto max-h-[200px]"
+                className="block mx-auto max-h-[500px]"
               />
             </div>
           )}
