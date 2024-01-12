@@ -1,9 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import { FaTimes } from "react-icons/fa";
+import { FaRegUser, FaTimes } from "react-icons/fa";
+import { useSelector } from "react-redux";
+import { useGetOrdersQuery } from "../../redux/api/orderApiSlice";
 
 const AdminMenu = () => {
+  const { userInfo } = useSelector((state) => state.auth);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { data: orders,  refetch } = useGetOrdersQuery();
+
+  useEffect(() => {
+    refetch();
+  }, [orders])
+
+  const notDeliveredOrders = orders?.filter(order => order.newOrder);
+const notDeliveredOrdersCount = notDeliveredOrders?.length;
+
+
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -11,9 +24,12 @@ const AdminMenu = () => {
 
   return (
     <>
+    {userInfo?.isAdmin && (
+      <>
       <button
+      style={{ zIndex: 999999 }}
         className={`${
-          isMenuOpen ? "top-2 right-2" : "top-5 right-7"
+          isMenuOpen ? "top-5 right-7" : "top-5 right-7"
         } bg-[#151515] p-2 fixed rounded-lg`}
         onClick={toggleMenu}
       >
@@ -21,15 +37,17 @@ const AdminMenu = () => {
           <FaTimes color="white" />
         ) : (
           <>
-            <div className="w-6 h-0.5 bg-gray-200 my-1"></div>
-            <div className="w-6 h-0.5 bg-gray-200 my-1"></div>
-            <div className="w-6 h-0.5 bg-gray-200 my-1"></div>
+            
+            <FaRegUser className="w-6 h-5 bg-gray" />
+            <span className="px-1 py-0 text-sm text-white bg-pink-500 rounded-full">
+  {notDeliveredOrdersCount}
+</span>
           </>
         )}
       </button>
 
       {isMenuOpen && (
-        <section className="bg-[#151515] p-4 fixed right-7 top-5">
+        <section style={{ zIndex: 99999 }} className="bg-[#151515] p-4 fixed right-7 top-5">
           <ul className="list-none mt-2">
             <li>
               <NavLink
@@ -94,12 +112,16 @@ const AdminMenu = () => {
                   color: isActive ? "greenyellow" : "white",
                 })}
               >
-                Manage Orders
+                Manage Orders<span className="px-1 py-0 text-sm text-white bg-pink-500 rounded-full">
+                {notDeliveredOrdersCount}
+                </span>
               </NavLink>
             </li>
           </ul>
         </section>
       )}
+    </>)}
+    
     </>
   );
 };

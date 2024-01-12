@@ -33,6 +33,7 @@ const PlaceOrder = () => {
         shippingPrice: cart.shippingPrice,
         taxPrice: cart.taxPrice,
         totalPrice: cart.totalPrice,
+        newOrder: cart.newOrder
       }).unwrap();
       dispatch(clearCartItems());
       navigate(`/order/${res._id}`);

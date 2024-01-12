@@ -30,8 +30,19 @@
   opacity: 1;
 }
 
+
+
 #navigation-container:hover .search-icon {
   display: none;
   transition: opacity 0.2s ease-in-out; /* Add opacity transition */
 }
-
+.desktop-visible {
+  display: none;
+ }
+@media only screen and (max-width: 1024px) {
+  
+  .mobile-visible {
+    display: block;
+   }
+  
+}
