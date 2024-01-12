@@ -1,5 +1,5 @@
-// export const BASE_URL = import.meta.env.BACKEND_URL;
-export const BASE_URL = "https://e-shop-api-bnt6.onrender.com";
+export const BASE_URL = import.meta.env.BACKEND_URL;
+// export const BASE_URL = "https://e-shop-api-bnt6.onrender.com";
 // export const BASE_URL = "http://localhost:5000";
 // export const BASE_URL = "http://localhost:5000";
 export const USERS_URL = "/api/users";
