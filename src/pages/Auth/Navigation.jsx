@@ -20,11 +20,9 @@ import { useGetOrdersQuery } from "../../redux/api/orderApiSlice";
 const Navigation = () => {
   const { userInfo } = useSelector((state) => state.auth);
   const { cartItems } = useSelector((state) => state.cart);
-  const { data: orders, refetch } = useGetOrdersQuery();
+  
 
-  useEffect(() => {
-    refetch();
-  }, [])
+ 
 
 
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -127,7 +125,7 @@ const Navigation = () => {
             
               
             {userInfo.isAdmin && (<span className="px-1 py-0 text-sm text-white bg-pink-500 rounded-full">
-                  {orders?.length}
+                  
                 </span>)}
               
               </>
