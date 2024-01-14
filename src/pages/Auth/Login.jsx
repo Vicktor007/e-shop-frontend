@@ -51,7 +51,7 @@ const Login = () => {
                 htmlFor="email"
                 className="block text-sm font-medium text-white"
               >
-                Email Address
+                Email Address - Demo email <b>admin@gmail.com</b>
               </label>
               <input
                 type="email"
@@ -68,7 +68,7 @@ const Login = () => {
                 htmlFor="password"
                 className="block text-sm font-medium text-white"
               >
-                Password
+                Password - Demo password <b>admin112</b>
               </label>
               <input
                 type="password"
