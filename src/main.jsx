@@ -40,6 +40,7 @@ import ForgotPassword from "./pages/Auth/ForgotPassword.jsx";
 import ResetPassword from "./pages/Auth/ResetPassword.jsx";
 import Errorpage from "./pages/Auth/Errorpage.jsx";
 import Message from "./components/Message.jsx";
+import Loader from "./components/Loader.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -53,6 +54,7 @@ const router = createBrowserRouter(
       <Route path="/product/:id" element={<ProductDetails />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/shop" element={<Shop />} />
+      <Route path="/loader" element={<Loader />} />
       {/* <Route path="/error" element={<Message />} /> */}
       
 

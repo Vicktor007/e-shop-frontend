@@ -96,14 +96,14 @@ const Order = () => {
   ) : error ? (
     <Messsage variant="danger">{error.data.message}</Messsage>
   ) : (
-    <div className="container flex  flex-col p-3 ml-[10rem]  md:flex-row">
-      <div className="md:w-2/3 pr-4">
+    <div className="container flex  flex-col p-3 justify-center  md:flex-row">
+      <div className="md:w-[50%] pr-4">
         <div className="border gray-300 mt-5 pb-4 mb-5 ">
           {order.orderItems.length === 0 ? (
             <Messsage>Order is empty</Messsage>
           ) : (
             <div className="overflow-x-auto">
-              <table className="ml-5 w-[80%]">
+              <table className=" w-[100%]">
                 <thead className="border-b-2">
                   <tr>
                     <th className="p-2">Image</th>
@@ -121,11 +121,11 @@ const Order = () => {
                         <img
                           src={item.image}
                           alt={item.name}
-                          className="w-16 h-16 object-cover"
+                          className="w-16 h-16 object-cover m-auto"
                         />
                       </td>
 
-                      <td className="p-2">
+                      <td className="p-2 text-center">
                         <Link to={`/product/${item.product}`}>{item.name}</Link>
                       </td>
 
