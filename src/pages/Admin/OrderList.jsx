@@ -10,7 +10,7 @@ const OrderList = () => {
 
   useEffect(() => {
     refetch();
-  }, [])
+  }, [orders])
 
   
   return (

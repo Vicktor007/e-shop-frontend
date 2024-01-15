@@ -2,6 +2,7 @@
   width: 4%;
   transition: width 0.3s ease-in-out;
   overflow: hidden; /* Hide overflowing content during transition */
+  z-index: 10000000;
 }
 
 #navigation-container:hover {
@@ -30,19 +31,19 @@
   opacity: 1;
 }
 
-
-
 #navigation-container:hover .search-icon {
   display: none;
   transition: opacity 0.2s ease-in-out; /* Add opacity transition */
 }
-.desktop-visible {
-  display: none;
- }
-@media only screen and (max-width: 1024px) {
+
+@media only screen and (max-width: 680px) {
   
-  .mobile-visible {
-    display: block;
-   }
+  #navigation-container {
+    width: 10%;
+  }
+  
+  #navigation-container:hover {
+    width: 25%;
+  }
   
 }

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   AiOutlineHome,
   AiOutlineShopping,
@@ -6,7 +6,7 @@ import {
   AiOutlineUserAdd,
   AiOutlineShoppingCart,
 } from "react-icons/ai";
-import { FaHeart } from "react-icons/fa";
+import { FaHeart, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "./Navigation.css";
@@ -15,15 +15,10 @@ import { useLogoutMutation } from "../../redux/api/usersApiSlice";
 import { logout } from "../../redux/features/auth/authSlice";
 import FavoritesCount from "../Products/FavoritesCount";
 import { LuPackageCheck } from "react-icons/lu";
-import { useGetOrdersQuery } from "../../redux/api/orderApiSlice";
 
 const Navigation = () => {
   const { userInfo } = useSelector((state) => state.auth);
   const { cartItems } = useSelector((state) => state.cart);
-  
-
- 
-
 
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [showSidebar, setShowSidebar] = useState(false);
@@ -31,7 +26,9 @@ const Navigation = () => {
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
   };
-
+  const toggleSideBar = () => {
+    setShowSidebar(!showSidebar);
+  };
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -48,11 +45,29 @@ const Navigation = () => {
   };
 
   return (
+    <>
+    <button
+      style={{ zIndex: 999999 }}
+        className={`${
+          showSidebar ? "top-4 left-3" : "top-5 left-5"
+        } sm:hidden bg-[#151515] p-2 fixed rounded-lg `}
+        onClick={toggleSideBar}
+      >
+        {showSidebar ? (
+          <FaTimes color="white" />
+        ) : (
+          <>
+            <div className="w-6 h-0.5 bg-gray-200 my-1"></div>
+            <div className="w-6 h-0.5 bg-gray-200 my-1"></div>
+            <div className="w-6 h-0.5 bg-gray-200 my-1"></div>
+          </>
+        )}
+      </button>
     <div
-      style={{ zIndex: 99999 }}
+      style={{ zIndex: 9999 }}
       className={`${
-        showSidebar ? "hidden" : "flex"
-      }  xl:flex lg:flex max-lg:hidden flex-col justify-between p-4 text-white bg-[#000]   h-[100vh]  fixed `}
+        showSidebar ? "flex" : "hidden"
+      }   lg:flex  flex-col justify-between p-4 text-white bg-[#000] w-[5%] lg:hover:w-[15%] h-[100vh]  fixed `}
       id="navigation-container"
     >
       <div className="flex flex-col justify-center space-y-4">
@@ -120,15 +135,8 @@ const Navigation = () => {
           onClick={toggleDropdown}
           className="flex items-center text-gray-800 focus:outline-none"
         >
-          {userInfo ? ( <>
+          {userInfo ? (
             <span className="text-white">{userInfo.username}</span>
-            
-              
-            {userInfo.isAdmin && (<span className="px-1 py-0 text-sm text-white bg-pink-500 rounded-full">
-                  
-                </span>)}
-              
-              </>
           ) : (
             <></>
           )}
@@ -154,7 +162,8 @@ const Navigation = () => {
 
         {dropdownOpen && userInfo && (
           <ul
-            className={`absolute left-4 mt-2 bottom-6 mr-14 space-y-2 bg-white text-gray-600 ${
+          style={{ zIndex: 1009999 }}
+            className={`absolute right-0 bottom-5 mt-2  space-y-2 bg-white text-gray-600 ${
               !userInfo.isAdmin ? "-top-30" : "-top-90"
             } `}
           >
@@ -242,6 +251,7 @@ const Navigation = () => {
         )}
       </div>
     </div>
+    </>
   );
 };
 
