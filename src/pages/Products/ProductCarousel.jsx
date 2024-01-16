@@ -27,15 +27,15 @@ const ProductCarousel = () => {
   };
 
   return (
-    <div className="mb-4 lg:block xl:block md:block">
+    <div className="mb-4 w-[100%]">
       {isLoading ? null : error ? (
-        <Message variant="error">
+        <Message variant="danger">
           {error?.data?.message || error.error}
         </Message>
       ) : (
         <Slider
           {...settings}
-          className="xl:w-[40rem]  lg:w-[40rem] md:w-[50rem] sm:w-[30rem] sm:block"
+          
         >
           {products.map(
             ({

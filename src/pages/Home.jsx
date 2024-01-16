@@ -19,24 +19,26 @@ const Home = () => {
           {isError?.data?.message || isError.error}
         </Message>
       ) : (
+        
         <>
-          <div className="flex justify-between items-center">
-            <h1 className="ml-[20rem] mt-[10rem] text-[3rem]">
+        
+          <div className="flex flex-wrap justify-center  mt-[10rem]    items-center">
+           <h1 className="  text-center text-[2rem]">
               Special Products
             </h1>
 
             <Link
               to="/shop"
-              className="bg-pink-600 font-bold rounded-full py-2 px-10 mr-[18rem] mt-[10rem]"
+              className="  bg-pink-600  font-bold rounded-full py-2 px-10 mt-3 mx-[9rem]"
             >
               Shop
             </Link>
           </div>
 
           <div>
-            <div className="flex justify-center flex-wrap mt-[2rem]">
+            <div className="flex flex-wrap justify-center mt-[2rem] m-auto w-[80%] p-10">
               {data.products.map((product) => (
-                <div key={product._id}>
+                <div key={product._id} >
                   <Product product={product} />
                 </div>
               ))}

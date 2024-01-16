@@ -36,7 +36,7 @@ const AllProducts = () => {
 
   return (
     <>
-      <div className="container mx-[9rem]">
+      <div className="container m-auto">
         <div className="flex flex-col  md:flex-row">
           <div className="p-3">
             <div className="ml-[2rem] text-xl font-bold h-12">
@@ -47,7 +47,7 @@ const AllProducts = () => {
             <input
               type="text"
               placeholder="Search by name, category, or brand"
-              className="p-4 mb-3 w-[30rem] border rounded-lg bg-[#101011] text-white mr-[5rem]"
+              className="p-4 mb-3 w-[20rem] ml-[5rem] border rounded-lg bg-[#101011] text-white ]"
               value={searchTerm}
               onChange={handleSearchChange}
             />
@@ -57,7 +57,7 @@ const AllProducts = () => {
                 <div
                   key={product._id}
                   
-                  className="block mb-4 overflow-hidden"
+                  className="block mb-4 "
                 >
                   <div className="flex">
                     <img
@@ -102,16 +102,13 @@ const AllProducts = () => {
                             />
                           </svg>
                         </Link>
-                        <p>$ {product?.price}</p>
+                        <p className="ml-2">$ {product?.price}</p>
                       </div>
                     </div>
                   </div>
                 </div>
               ))}
             </div>
-          </div>
-          <div className="md:w-1/4 p-3 mt-2">
-            
           </div>
         </div>
       </div>

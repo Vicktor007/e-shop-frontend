@@ -50,7 +50,7 @@ const Navigation = () => {
       style={{ zIndex: 999999 }}
         className={`${
           showSidebar ? "top-4 left-3" : "top-5 left-5"
-        } sm:hidden bg-[#151515] p-2 fixed rounded-lg `}
+        } lg:hidden max-md:block  hidden bg-[#151515] p-2 fixed rounded-lg `}
         onClick={toggleSideBar}
       >
         {showSidebar ? (
@@ -67,7 +67,7 @@ const Navigation = () => {
       style={{ zIndex: 9999 }}
       className={`${
         showSidebar ? "flex" : "hidden"
-      }   lg:flex  flex-col justify-between p-4 text-white bg-[#000] w-[5%] lg:hover:w-[15%] h-[100vh]  fixed `}
+      }  md:flex lg:flex md:w-[15%] flex-col justify-between p-4 text-white bg-[#000] w-[5%] lg:hover:w-[15%] h-[100vh]  fixed `}
       id="navigation-container"
     >
       <div className="flex flex-col justify-center space-y-4">
@@ -141,6 +141,7 @@ const Navigation = () => {
             <></>
           )}
           {userInfo && (
+
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className={`h-4 w-4 ml-1 ${

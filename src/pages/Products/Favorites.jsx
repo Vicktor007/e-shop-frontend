@@ -6,17 +6,18 @@ const Favorites = () => {
   const favorites = useSelector(selectFavoriteProduct);
 
   return (
-    <div className="ml-[10rem]">
-      <h1 className="text-lg font-bold ml-[3rem] mt-[3rem]">
+    <div>
+      <h1 className="text-lg text-center font-bold  mt-[1rem]">
         FAVORITE PRODUCTS
       </h1>
 
-      <div className="flex flex-wrap">
-        {favorites.length === 0 ? (<div className="ml-12"> No favorites yet</div>): (favorites.map((product) => (
+      <div className="flex m-[3rem] gap-2 flex-wrap">
+        {favorites.length === 0 ? (<div className="text-center w-[100%]"> No favorites yet</div>): (favorites.map((product) => (
           <Product key={product._id} product={product} />
         )))}
       </div>
     </div>
+    
   );
 };
 

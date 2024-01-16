@@ -12,6 +12,7 @@ import {
 } from "../redux/features/shop/shopSlice";
 import Loader from "../components/Loader";
 import ProductCard from "./Products/ProductCard";
+import { FaTimes } from "react-icons/fa";
 
 const Shop = () => {
   const dispatch = useDispatch();
@@ -21,6 +22,12 @@ const Shop = () => {
 
   const categoriesQuery = useFetchCategoriesQuery();
   const [priceFilter, setPriceFilter] = useState("");
+  const [showSidebar, setShowSidebar] = useState(false);
+
+
+  const toggleSideBar = () => {
+    setShowSidebar(!showSidebar);
+  };
 
   const filteredProductsQuery = useGetFilteredProductsQuery({
     checked,
@@ -84,10 +91,42 @@ const Shop = () => {
 
   return (
     <>
-      <div className="container mx-auto">
-        <div className="flex md:flex-row">
-          <div className="bg-[#151515] p-3 mt-2 mb-2">
-            <h2 className="h4 text-center py-2 bg-black rounded-full mb-2">
+    
+    <button
+      style={{ zIndex: 999999 }}
+        className={`${
+          showSidebar ? "top-4 left-[20rem]" : "top-4 left-[5rem]"
+        } lg:hidden  block bg-[#3b3a3a] p-2 fixed rounded-lg `}
+        onClick={toggleSideBar}
+      >
+        {showSidebar ? (
+          <FaTimes color="white" />
+        ) : (
+          <>
+            
+            <div className="  my-1"> Add filters</div>
+          </>
+        )}
+      </button>
+    
+      <div className="container mx-auto  pl-15 w-[90%]  ">
+      
+
+        <div className="flex  md:flex-row">
+          <div
+      
+      className={`${
+        showSidebar ? "block " : "hidden"
+      }    lg:block `}
+      
+    >
+      <div  className="
+        bg-[#151515]       p-3 mt-2 mb-2">
+
+
+
+
+            <h2 className="h4 text-center py-2 bg-black  rounded-full mb-2">
               Filter by Categories
             </h2>
 
@@ -145,13 +184,13 @@ const Shop = () => {
               Filer by Price
             </h2>
 
-            <div className="p-5 w-[15rem]">
+            <div className=" flex justify-center  w-[15rem]">
               <input
                 type="text"
                 placeholder="Enter Price"
                 value={priceFilter}
                 onChange={handlePriceChange}
-                className="w-full px-3 py-2 placeholder-gray-400 border rounded-lg focus:outline-none focus:ring focus:border-pink-300"
+                className="w-[80%] px-3 py-2 placeholder-gray-400 border rounded-lg  focus:outline-none focus:ring focus:border-pink-300"
               />
             </div>
 
@@ -163,13 +202,24 @@ const Shop = () => {
                 Reset
               </button>
             </div>
+            <div className="p-5 pt-0">
+              <button
+                className="w-full border my-4"
+                onClick={toggleSideBar}
+              >
+                Apply Filters
+              </button>
+            </div>
           </div>
+          </div>
+    
+          
 
           <div className="p-3">
             <h2 className="h4 text-center mb-2">{products?.length} Products</h2>
-            <div className="flex flex-wrap">
+            <div className="flex m-auto lg:justify-normal md:justify-normal justify-center flex-wrap">
               {products.length === 0 ? (
-                "No products"
+                <Loader />
               ) : (
                 products?.map((p) => (
                   <div className="p-3" key={p._id}>

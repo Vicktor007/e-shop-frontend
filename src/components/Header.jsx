@@ -16,17 +16,19 @@ const Header = () => {
 
   return (
     <>
-      <div className="flex justify-evenly flex-wrap-reverse">
-        <div className="xl:block">
-          <div className="grid grid-cols-2">
+      <div className="flex flex-wrap justify-around">
+        
+        <div className=" max-w-xl flex flex-wrap justify-center ">
             {data.map((product) => (
               <div key={product._id}>
                 <SmallProduct product={product} />
               </div>
             ))}
-          </div>
+          
         </div>
+        <div className="max-w-3xl hidden lg:block ">
         <ProductCarousel />
+        </div>
       </div>
     </>
   );

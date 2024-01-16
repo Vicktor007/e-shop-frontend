@@ -147,7 +147,7 @@ const Order = () => {
         <div className="mt-5 border-gray-300 pb-4 mb-4">
           <h2 className="text-xl font-bold mb-2">Shipping</h2>
           <p className="mb-4 mt-4">
-            <strong className="text-pink-500">Order:</strong> {order._id}
+            <strong className="text-pink-500">Order id:</strong> {order._id}
           </p>
 
           <p className="mb-4">

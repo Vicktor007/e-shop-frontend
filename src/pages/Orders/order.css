@@ -3,3 +3,16 @@
     height: 100dvh;
     text-align: center;
 }
+
+
+
+@media only screen and (max-width: 980px) {
+  
+    .needed {
+        display: none;
+    }
+    .im-auto{
+        margin: auto;
+      }
+    
+  }
