@@ -38,7 +38,7 @@ const Shipping = () => {
   }, [navigate, shippingAddress]);
 
   return (
-    <div className="container mx-auto mt-10">
+    <div className="container mx-auto max-w-[80%] mt-10">
       <ProgressSteps step1 step2 />
       <div className="mt-[10rem] flex justify-around items-center flex-wrap">
         <form onSubmit={submitHandler} className="w-[40rem]">
@@ -102,7 +102,7 @@ const Shipping = () => {
 
                 <span className="ml-2">PayPal or Credit Card</span>
               </label>
-              <label className="inline-flex items-center">
+              <label className="inline-flex ml-4 items-center">
                 <input
                   type="radio"
                   className="form-radio text-pink-500"

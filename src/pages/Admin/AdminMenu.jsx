@@ -39,7 +39,7 @@ const notDeliveredOrdersCount = notDeliveredOrders?.length;
           <>
             
             <FaRegUser className="w-6 h-6 mb-1 bg-gray" />
-            {notDeliveredOrdersCount && <span className="px-1.5 py-0 text-md  text-center text-white bg-pink-500 rounded-full">
+            {notDeliveredOrdersCount > 0 && <span className="px-1.5 py-0 text-md  text-center text-white bg-pink-500 rounded-full">
   {notDeliveredOrdersCount}
 </span>}
           </>
@@ -112,9 +112,9 @@ const notDeliveredOrdersCount = notDeliveredOrders?.length;
                   color: isActive ? "greenyellow" : "white",
                 })}
               >
-                Manage Orders  <span className="px-1.5  text-md text-white bg-pink-500 rounded-full">
-                {notDeliveredOrdersCount}
-                </span>
+                Manage Orders  {notDeliveredOrdersCount > 0 && <span className="px-1.5 py-0 text-md  text-center text-white bg-pink-500 rounded-full">
+  {notDeliveredOrdersCount}
+</span>}
               </NavLink>
             </li>
           </ul>

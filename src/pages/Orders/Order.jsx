@@ -91,6 +91,12 @@ const Order = () => {
     refetch();
   };
 
+  useEffect(() => {
+    if(order?.ispaid){
+    refetch();
+    }
+  },[order]);
+
   return isLoading ? (
     <Loader />
   ) : error ? (
