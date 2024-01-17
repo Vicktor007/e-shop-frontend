@@ -119,20 +119,20 @@ const confirmDelete = (id) => {
       ) : (
         <div className="flex flex-col md:flex-row">
          
-          <table className="w-full md:w-4/5 mx-auto">
+          <table className="w-full md:w-4/5 mx-auto overflow-auto">
             <thead>
               <tr>
-                <th className="px-4 py-2 text-left">ID</th>
+                <th className="px-4 py-2 text-center">ID</th>
                 <th className="px-4 py-2 text-left">NAME</th>
                 <th className="px-4 py-2 text-left">EMAIL</th>
-                <th className="px-4 py-2 text-left">ADMIN</th>
+                <th className="px-4 py-2 text-center">ADMIN</th>
                 <th className="px-4 py-2"></th>
               </tr>
             </thead>
             <tbody>
               {users.map((user) => (
                 <tr key={user._id}>
-                  <td className="px-4 py-2">{user._id}</td>
+                  <td className="px-4 text-center py-2">{user._id}</td>
                   <td className="px-4 py-2">
                     {editableUserId === user._id ? (
                       <div className="flex items-center">
@@ -191,7 +191,7 @@ const confirmDelete = (id) => {
                       </div>
                     )}
                   </td>
-                  <td className="px-4 py-2">
+                  <td className="px-4 text-center py-2">
                   <button onClick={() => toggleAdminStatus(user._id, user.isAdmin)}>
                        {user.isAdmin ? (
                      <FaCheck style={{ color: "green" }} />

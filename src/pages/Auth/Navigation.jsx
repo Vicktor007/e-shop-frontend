@@ -136,7 +136,7 @@ const Navigation = () => {
           className="flex items-center text-gray-800 focus:outline-none"
         >
           {userInfo ? (
-            <span className="text-white">{userInfo.username}</span>
+            <span className="text-white mb-5">{userInfo.username}</span>
           ) : (
             <></>
           )}
@@ -144,7 +144,7 @@ const Navigation = () => {
 
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className={`h-4 w-4 ml-1 ${
+              className={`h-4 w-4 ml-1 mb-4 ${
                 dropdownOpen ? "transform rotate-180" : ""
               }`}
               fill="none"
@@ -164,7 +164,7 @@ const Navigation = () => {
         {dropdownOpen && userInfo && (
           <ul
           style={{ zIndex: 1009999 }}
-            className={`absolute right-0 bottom-5 mt-2  space-y-2 bg-white text-gray-600 ${
+            className={`absolute right-0 bottom-[3rem] mt-2  space-y-2 bg-white text-gray-600 ${
               !userInfo.isAdmin ? "-top-30" : "-top-90"
             } `}
           >

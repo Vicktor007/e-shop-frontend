@@ -27,13 +27,13 @@ const OrderList = () => {
 
           <thead className="w-full border">
             <tr className="mb-[5rem]">
-              <th className="text-left pl-1">ITEMS</th>
-              <th className="text-left pl-1">ID</th>
+              <th className="text-center pl-1">ITEMS</th>
+              <th className="text-center needed pl-1">ID</th>
               <th className="text-left pl-1">USER</th>
-              <th className="text-left pl-1">DATE</th>
+              <th className="text-center">DATE</th>
               <th className="text-left pl-1">TOTAL</th>
-              <th className="text-left pl-1">PAID</th>
-              <th className="text-left pl-1">DELIVERED</th>
+              <th className="text-left needed pl-1">PAID</th>
+              <th className="text-left needed pl-1">DELIVERED</th>
               <th></th>
             </tr>
           </thead>
@@ -45,20 +45,20 @@ const OrderList = () => {
                   <img
                     src={order.orderItems[0].image}
                     alt={order._id}
-                    className="w-[5rem] pt-4"
+                    className="w-[5rem] m-auto pt-4"
                   />
                 </td>
-                <td>{order._id}</td>
+                <td className="needed">{order._id}</td>
 
                 <td>{order.user ? order.user.username : "N/A"}</td>
 
-                <td>
+                <td className="text-center">
                   {order.createdAt ? order.createdAt.substring(0, 10) : "N/A"}
                 </td>
 
                 <td>$ {order.totalPrice}</td>
 
-                <td className="py-2">
+                <td className="py-2 needed">
                   {order.isPaid ? (
                     <p className="p-1 text-center bg-green-400 w-[6rem] rounded-full">
                       Completed
@@ -70,7 +70,7 @@ const OrderList = () => {
                   )}
                 </td>
 
-                <td className="px-2 py-2">
+                <td className="px-2 needed py-2">
                   {order.isDelivered ? (
                     <p className="p-1 text-center bg-green-400 w-[6rem] rounded-full">
                       Completed
@@ -83,9 +83,9 @@ const OrderList = () => {
                 </td>
 
                 <td>
-                  {order.user ? (<Link to={`/order/${order._id}`}>
-                    <button>More details</button>
-                  </Link>) : ("Order not available")}
+                  <Link className="px-3 pb-4 pt-3 text-center bg-slate-800 hover:bg-slate-600 w-[6rem] rounded-full" to={`/order/${order._id}`}>
+                    <button>Order details</button>
+                  </Link>
                 </td>
               </tr>
             ))}

@@ -24,14 +24,14 @@ const UserOrder = () => {
           {error?.data?.message || error.error}
         </Message>
       ) : (
-        <table className="container mx-auto max-w-[90%]  testing">
+        <table className="container mx-auto max-w-[90%]  ">
           
 
           <thead className="w-full border">
             <tr className="mb-[5rem]">
               <th className="text-center ">ITEMS</th>
               <th className="text-center needed ">ID</th>
-              <th className="text-center testing w-[8rem]">DATE</th>
+              <th className="text-center  w-[8rem]">DATE</th>
               <th className="text-center  w-[8rem]">TOTAL</th>
               <th className="text-center  w-[8rem] needed ">PAID</th>
               <th className="text-center w-[8rem] needed">DELIVERED</th>
