@@ -41,8 +41,8 @@ const Login = () => {
 
   return (
     <div>
-      <section className="sm:px-[3rem] lg:pl-[10rem] m-auto overflow-hidden flex ">
-        <div className="mr-[4rem] p-5 mt-[5rem]">
+      <section className="sm:px-[3rem]  lg:pl-[10rem] m-auto overflow-hidden flex ">
+        <div className="mr-[4rem] w-[50%] p-5 mt-[5rem]">
           <h1 className="text-2xl font-semibold mb-4">Sign In</h1>
 
           <form onSubmit={submitHandler} className="container w-[35rem]">
@@ -107,7 +107,7 @@ const Login = () => {
         <img
           src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80"
           alt=""
-          className="h-[65rem] w-[60%] xl:block md:block sm:hidden rounded-lg"
+          className="h-[65rem] w-[50%] xl:block md:block hidden rounded-lg"
         />
       </section>
     </div>

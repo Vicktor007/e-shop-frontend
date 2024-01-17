@@ -27,7 +27,7 @@ const notDeliveredOrdersCount = notDeliveredOrders?.length;
     {userInfo?.isAdmin && (
       <>
       <button
-      style={{ zIndex: 999999 }}
+      style={{ zIndex: 9999999 }}
         className={`${
           isMenuOpen ? "top-5 right-7" : "top-5 right-7"
         } bg-[#151515] p-2 fixed rounded-lg`}
@@ -47,7 +47,7 @@ const notDeliveredOrdersCount = notDeliveredOrders?.length;
       </button>
 
       {isMenuOpen && (
-        <section style={{ zIndex: 99999 }} className="bg-[#151515] p-4 fixed right-7 top-5">
+        <section style={{ zIndex: 999999 }} className="bg-[#151515] p-4 fixed right-7 top-5">
           <ul className="list-none mt-2">
             <li>
               <NavLink

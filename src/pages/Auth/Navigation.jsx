@@ -47,7 +47,7 @@ const Navigation = () => {
   return (
     <>
     <button
-      style={{ zIndex: 999999 }}
+      style={{ zIndex: 9999999 }}
         className={`${
           showSidebar ? "top-4 left-3" : "top-5 left-5"
         } lg:hidden max-md:block  hidden bg-[#151515] p-2 fixed rounded-lg `}
@@ -64,7 +64,7 @@ const Navigation = () => {
         )}
       </button>
     <div
-      style={{ zIndex: 9999 }}
+      style={{ zIndex: 999999 }}
       className={`${
         showSidebar ? "flex" : "hidden"
       }  md:flex lg:flex md:w-[15%] flex-col justify-between p-4 text-white bg-[#000] w-[5%] lg:hover:w-[15%] h-[100vh]  fixed `}

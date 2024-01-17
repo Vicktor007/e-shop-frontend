@@ -29,7 +29,7 @@ const Home = () => {
 
             <Link
               to="/shop"
-              className="  bg-pink-600  font-bold rounded-full py-2 px-10 mt-3 mx-[9rem]"
+              className="  bg-pink-600  font-bold rounded-full py-2 px-10 mt-3 mx-[2rem]"
             >
               Shop
             </Link>
