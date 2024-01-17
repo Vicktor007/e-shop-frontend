@@ -42,14 +42,14 @@ const Login = () => {
   return (
     <div>
       <section className="sm:px-[3rem]  lg:pl-[10rem] m-auto overflow-hidden flex ">
-        <div className="mr-[4rem] w-[50%] p-5 mt-[5rem]">
-          <h1 className="text-2xl font-semibold mb-4">Sign In</h1>
+        <div className="mr-[4rem] w-[50%] px-[5rem] mt-[5rem]">
+          <h1 className="text-2xl font-semibold  w-[5rem] mb-4">Sign In</h1>
 
           <form onSubmit={submitHandler} className="container w-[35rem]">
             <div className="my-[2rem]">
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-white"
+                className="block text-sm font-medium w-[15rem] md:w-[20rem] lg:w-[25rem] text-white"
               >
                 Email Address - Demo email <b>admin@gmail.com</b>
               </label>
