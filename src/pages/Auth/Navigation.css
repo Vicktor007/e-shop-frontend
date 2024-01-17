@@ -1,5 +1,5 @@
 #navigation-container {
-  width: 3.8rem;
+  width: 4rem;
   transition: width 0.3s ease-in-out;
   overflow: hidden; /* Hide overflowing content during transition */
   z-index: 10000000;
@@ -36,15 +36,4 @@
   transition: opacity 0.2s ease-in-out; /* Add opacity transition */
 }
 
-@media only screen and (max-width: 680px) {
-  
-  #navigation-container {
-    width: 10%;
-  }
-  
-  #navigation-container:hover {
-    width: 25%;
-  }
-  
-  
-}
+

@@ -29,10 +29,10 @@ const UserOrder = () => {
 
           <thead className="w-full border">
             <tr className="mb-[5rem]">
-              <th className="text-center ">ITEMS</th>
+              <th className="text-center lg:text-[1rem] text-[0.7rem]">ITEMS</th>
               <th className="text-center needed ">ID</th>
-              <th className="text-center  w-[8rem]">DATE</th>
-              <th className="text-center  w-[8rem]">TOTAL</th>
+              <th className="text-center lg:text-[1rem] text-[0.7rem] w-[8rem]">DATE</th>
+              <th className="text-center lg:text-[1rem] text-[0.7rem]  w-[8rem]">TOTAL</th>
               <th className="text-center  w-[8rem] needed ">PAID</th>
               <th className="text-center w-[8rem] needed">DELIVERED</th>
               <th></th>
@@ -46,17 +46,17 @@ const UserOrder = () => {
                   <img
                     src={order.orderItems[0].image}
                     alt={order._id}
-                    className="w-[5rem] im-auto pt-4"
+                    className="w-[5rem] m-auto pt-4"
                   />
                 </td>
                 
-                <td className="needed">{order._id}</td>
+                <td className="needed text-center">{order._id}</td>
 
-                <td className="text-center">
+                <td className="text-center lg:text-[1rem] text-[0.8rem]">
                   {order.createdAt ? order.createdAt.substring(0, 10) : "N/A"}
                 </td>
 
-                <td className="text-center">$ {order.totalPrice}</td>
+                <td className="text-center lg:text-[1rem] text-[0.8rem]">$ {order.totalPrice}</td>
 
                 <td className="py-2 needed">
                   {order.isPaid ? (
@@ -83,8 +83,8 @@ const UserOrder = () => {
                 </td>
 
                 <td>
-                  <Link className="p-4 text-center bg-slate-800 hover:bg-slate-600 w-[6rem] rounded-full" to={`/order/${order._id}`}>
-                    <button>Order details</button>
+                  <Link className="px-4 py-2 text-center text-[0.8rem] lg:text-[1rem] bg-slate-800 hover:bg-slate-600 w-[6rem] rounded-full" to={`/order/${order._id}`}>
+                    <button><b>details</b></button>
                   </Link>
                 </td>
               </tr>

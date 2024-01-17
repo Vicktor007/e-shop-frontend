@@ -161,10 +161,10 @@ const confirmDelete = () => {
 
   return (
     <>
-      <div className="container  xl:mx-[9rem] sm:mx-[0]">
+      <div className="container mx-auto ">
         <div className="flex flex-col md:flex-row">
           <AdminMenu />
-          <div className="md:w-3/4 p-3">
+          <div className="w-[90%]  mx-auto p-3">
             <div className="h-12">Update / Delete Product</div>
 
             {image && (
@@ -172,12 +172,12 @@ const confirmDelete = () => {
                 <img
                   src={image}
                   alt="product"
-                  className="block mx-auto h-[20%]"
+                  className="block  w-[20rem] m-auto h-[20%]"
                 />
               </div>
             )}
 
-            <div className="mb-3">
+            <div className="mb-3 m-auto">
               <label className="text-white  py-2 px-4 block w-full text-center rounded-lg cursor-pointer font-bold py-11">
                 {image ? image.name : "Upload image"}
                 <input
@@ -196,7 +196,7 @@ const confirmDelete = () => {
                   <label htmlFor="name">Name</label> <br />
                   <input
                     type="text"
-                    className="p-4 mb-3 w-[30rem] border rounded-lg bg-[#101011] text-white mr-[5rem]"
+                    className="p-4 mb-3 w-[15rem] border rounded-lg bg-[#101011] text-white mr-[5rem]"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                   />
@@ -206,7 +206,7 @@ const confirmDelete = () => {
                   <label htmlFor="name block">Price</label> <br />
                   <input
                     type="number"
-                    className="p-4 mb-3 w-[30rem] border rounded-lg bg-[#101011] text-white "
+                    className="p-4 mb-3 w-[15rem] border rounded-lg bg-[#101011] text-white "
                     value={price}
                     onChange={(e) => setPrice(e.target.value)}
                   />
@@ -219,7 +219,7 @@ const confirmDelete = () => {
                   <input
                     type="number"
                     min="1"
-                    className="p-4 mb-3 w-[30rem] border rounded-lg bg-[#101011] text-white mr-[5rem]"
+                    className="p-4 mb-3 w-[15rem] border rounded-lg bg-[#101011] text-white mr-[5rem]"
                     value={quantity}
                     onChange={(e) => setQuantity(e.target.value)}
                   />
@@ -228,7 +228,7 @@ const confirmDelete = () => {
                   <label htmlFor="name block">Brand</label> <br />
                   <input
                     type="text"
-                    className="p-4 mb-3 w-[30rem] border rounded-lg bg-[#101011] text-white "
+                    className="p-4 mb-3 w-[15rem] border rounded-lg bg-[#101011] text-white "
                     value={brand}
                     onChange={(e) => setBrand(e.target.value)}
                   />
@@ -245,12 +245,12 @@ const confirmDelete = () => {
                 onChange={(e) => setDescription(e.target.value)}
               />
 
-              <div className="flex justify-between">
+              <div className="flex flex-wrap gap-10">
                 <div>
                   <label htmlFor="name block">Count In Stock</label> <br />
                   <input
                     type="text"
-                    className="p-4 mb-3 w-[30rem] border rounded-lg bg-[#101011] text-white "
+                    className="p-4 mb-3 w-[15rem] border rounded-lg bg-[#101011] text-white "
                     value={quantity}
 
                     readOnly
@@ -261,7 +261,7 @@ const confirmDelete = () => {
                   <label htmlFor=""> Category </label> <br />
                   <select
                   value={category}
-                   className="p-4 mb-3 w-[30rem] border rounded-lg bg-[#101011] text-white mr-[5rem]"
+                   className="p-4 mb-3 w-[15rem] border rounded-lg bg-[#101011] text-white mr-[5rem]"
                     onChange={(e) => setCategory(e.target.value)}
                              >
                             
@@ -279,13 +279,13 @@ const confirmDelete = () => {
               <div className="">
                 <button
                   onClick={handleSubmit}
-                  className="py-4 px-10 mt-5 rounded-lg text-lg font-bold  bg-green-600 mr-6"
+                  className="py-4 px-8 mt-5 rounded-lg text-lg font-bold  bg-green-600 mr-6"
                 >
                   Update
                 </button>
                 <button
                   onClick={confirmDelete}
-                  className="py-4 px-10 mt-5 rounded-lg text-lg font-bold  bg-pink-600"
+                  className="py-4 px-8 mt-5 rounded-lg text-lg font-bold  bg-pink-600"
                 >
                   Delete
                 </button>

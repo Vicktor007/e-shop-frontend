@@ -82,7 +82,7 @@ const ProductDetails = () => {
         </Message>
       ) : (
         <>
-          <div className="flex flex-wrap relative items-between mt-[2rem] ml-[10rem]">
+          <div className="flex flex-wrap relative items-between  w-[90%] m-auto mt-[2rem]">
             <div>
               <img
                 src={product.image}
@@ -101,16 +101,16 @@ const ProductDetails = () => {
 
               <p className="text-5xl my-4 font-extrabold">$ {product.price}</p>
 
-              <div className="flex items-center justify-between w-[20rem]">
-                <div className="one">
+              <div className="flex  flex-col md:flex-row lg:flex-row justify-between  w-[10rem]">
+                <div className="one ">
                   <h1 className="flex items-center mb-6">
                     <FaStore className="mr-2 text-white" /> Brand:{" "}
                     {product.brand}
                   </h1>
-                  <h1 className="flex items-center mb-6 w-[20rem]">
+                  {/* <h1 className="flex items-center mb-6 w-[20rem]">
                     <FaClock className="mr-2 text-white" /> Added:{" "}
                     {moment(product.createAt).fromNow()}
-                  </h1>
+                  </h1> */}
                   <h1 className="flex items-center mb-6">
                     <FaStar className="mr-2 text-white" /> Reviews:{" "}
                     {product.numReviews}
@@ -143,7 +143,7 @@ const ProductDetails = () => {
                     <select
                       value={qty}
                       onChange={(e) => setQty(e.target.value)}
-                      className="p-2 w-[6rem] rounded-lg text-black"
+                      className="p-2 w-[6rem] mx-2 rounded-lg text-black"
                     >
                       {[...Array(product.quantity).keys()].map((x) => (
                         <option key={x + 1} value={x + 1}>
@@ -166,7 +166,7 @@ const ProductDetails = () => {
               </div>
             </div>
 
-            <div className="mt-[5rem] container flex flex-wrap items-start justify-between ml-[10rem]">
+            <div className="mt-[5rem] container flex flex-wrap items-start justify-between ">
               <ProductTabs
                 loadingProductReview={loadingProductReview}
                 userInfo={userInfo}

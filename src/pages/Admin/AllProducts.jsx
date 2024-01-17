@@ -36,10 +36,10 @@ const AllProducts = () => {
 
   return (
     <>
-      <div className="container m-auto">
-        <div className="flex flex-col  md:flex-row">
+      <div className="container  m-auto">
+        <div className="flex flex-col   md:flex-row">
           <div className="p-3">
-            <div className="ml-[2rem] text-xl font-bold h-12">
+            <div className="ml-[2rem] text-xl text-center font-bold h-12">
               All Products ({filteredProducts.length})
             </div>
             
@@ -47,23 +47,23 @@ const AllProducts = () => {
             <input
               type="text"
               placeholder="Search by name, category, or brand"
-              className="p-4 mb-3 w-[20rem] ml-[5rem] border rounded-lg bg-[#101011] text-white ]"
+              className="p-4 mb-3 w-[90%] lg:w-[30%] md:w-[50%] border rounded-lg bg-[#101011] text-white ]"
               value={searchTerm}
               onChange={handleSearchChange}
             />
             </div>
-            <div className="flex flex-wrap justify-around items-center">
+            <div className="flex flex-wrap justify-center gap-5 items-center">
               {filteredProducts.map((product) => (
                 <div
                   key={product._id}
                   
                   className="block mb-4 "
                 >
-                  <div className="flex">
+                  <div className="  w-[90%] md:w-[15rem] lg:w-[20rem] flex-nowrap lg:flex-wrap sm:flex-wrap">
                     <img
                       src={product.image}
                       alt={product.name}
-                      className="w-[10rem] object-cover"
+                      className="w-[15rem] m-auto object-cover"
                     />
                     <div className="p-4 flex flex-col justify-around">
                       <div className="flex justify-between">
@@ -102,12 +102,18 @@ const AllProducts = () => {
                             />
                           </svg>
                         </Link>
-                        <p className="ml-2">$ {product?.price}</p>
+                        <p className="ml-4 w-[4rem] text-sm">$ {product?.price}</p>
                       </div>
                     </div>
                   </div>
                 </div>
               ))}
+              <div
+                  
+                  
+                  className="block mb-4 "
+                >
+                  <div className="  w-[90%] md:w-[15rem] lg:w-[20rem] flex-nowrap lg:flex-wrap sm:flex-wrap"></div></div>
             </div>
           </div>
         </div>

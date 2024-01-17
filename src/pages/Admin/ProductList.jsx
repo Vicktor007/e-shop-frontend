@@ -68,11 +68,11 @@ const ProductList = () => {
   };
 
   return (
-    <div className="container  testing m-auto w-[80%] ">
-      <div className="flex flex-col md:flex-row">
+    <div className="container   m-auto w-[80%] ">
+      <div className="flex  flex-col ">
         
         <div className="md:w-3/4 p-3">
-          <div className="h-12">Create Product</div>
+          <div className="h-12 text-center">Create Product</div>
 
           {imageUrl && (
             <div className="text-center">
@@ -104,7 +104,7 @@ const ProductList = () => {
                 <label htmlFor="name">Name</label> <br />
                 <input
                   type="text"
-                  className="p-4 mb-3 w-[20rem] border rounded-lg bg-[#101011] text-white"
+                  className="p-4 mb-3  border rounded-lg bg-[#101011] text-white"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                 />
@@ -113,7 +113,7 @@ const ProductList = () => {
                 <label htmlFor="name block">Price</label> <br />
                 <input
                   type="number"
-                  className="p-4 mb-3  w-[20rem] border rounded-lg bg-[#101011] text-white"
+                  className="p-4 mb-3   border rounded-lg bg-[#101011] text-white"
                   value={price}
                   onChange={(e) => setPrice(e.target.value)}
                 />
@@ -124,7 +124,7 @@ const ProductList = () => {
                 <label htmlFor="name block">Quantity</label> <br />
                 <input
                   type="number"
-                  className="p-4 mb-3 w-[20rem] border rounded-lg bg-[#101011] text-white"
+                  className="p-4 mb-3  border rounded-lg bg-[#101011] text-white"
                   value={quantity}
                   onChange={(e) => setQuantity(e.target.value)}
                 />
@@ -133,7 +133,7 @@ const ProductList = () => {
                 <label htmlFor="name block">Brand</label> <br />
                 <input
                   type="text"
-                  className="p-4 mb-3 w-[20rem] border rounded-lg bg-[#101011] text-white"
+                  className="p-4 mb-3 border rounded-lg bg-[#101011] text-white"
                   value={brand}
                   onChange={(e) => setBrand(e.target.value)}
                 />
@@ -156,7 +156,7 @@ const ProductList = () => {
   <label htmlFor="">Category</label> <br />
   <select
   value={category}
-    className="p-4 mb-3 w-[20rem] border rounded-lg bg-[#101011] text-white"
+    className="p-4 mb-3  border rounded-lg bg-[#101011] text-white"
     onChange={(e) => setCategory(e.target.value)}
   >
     <option value="" disabled >Choose Category</option>

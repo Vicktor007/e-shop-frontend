@@ -27,11 +27,11 @@ const OrderList = () => {
 
           <thead className="w-full border">
             <tr className="mb-[5rem]">
-              <th className="text-center pl-1">ITEMS</th>
+              <th className="text-center lg:text-[1rem] text-[0.7rem] pl-1">ITEMS</th>
               <th className="text-center needed pl-1">ID</th>
-              <th className="text-left pl-1">USER</th>
-              <th className="text-center">DATE</th>
-              <th className="text-left pl-1">TOTAL</th>
+              <th className="text-center lg:text-[1rem] text-[0.7rem] pl-1">USER</th>
+              <th className="text-center lg:text-[1rem] text-[0.7rem]">DATE</th>
+              <th className="text-center lg:text-[1rem] text-[0.7rem] pl-1">TOTAL</th>
               <th className="text-left needed pl-1">PAID</th>
               <th className="text-left needed pl-1">DELIVERED</th>
               <th></th>
@@ -48,15 +48,15 @@ const OrderList = () => {
                     className="w-[5rem] m-auto pt-4"
                   />
                 </td>
-                <td className="needed">{order._id}</td>
+                <td className="needed text-center">{order._id}</td>
 
-                <td>{order.user ? order.user.username : "N/A"}</td>
+                <td className="text-center lg:text-[1rem] text-[0.8rem]">{order.user ? order.user.username : "N/A"}</td>
 
-                <td className="text-center">
+                <td className="text-center lg:text-[1rem] text-[0.8rem]">
                   {order.createdAt ? order.createdAt.substring(0, 10) : "N/A"}
                 </td>
 
-                <td>$ {order.totalPrice}</td>
+                <td className="text-center lg:text-[1rem] text-[0.8rem]">$ {order.totalPrice}</td>
 
                 <td className="py-2 needed">
                   {order.isPaid ? (
@@ -83,8 +83,8 @@ const OrderList = () => {
                 </td>
 
                 <td>
-                  <Link className="px-3 pb-4 pt-3 text-center bg-slate-800 hover:bg-slate-600 w-[6rem] rounded-full" to={`/order/${order._id}`}>
-                    <button>Order details</button>
+                  <Link className="px-3 pb-4 pt-3 text-[0.8rem] text-center bg-slate-800 hover:bg-slate-600 w-[6rem] rounded-full" to={`/order/${order._id}`}>
+                    <button><b>details</b></button>
                   </Link>
                 </td>
               </tr>
