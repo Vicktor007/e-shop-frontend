@@ -48,8 +48,9 @@ const Register = () => {
   };
 
   return (
-    <section className=" flex flex-wrap px-[5rem] m-auto  overflow-hidden">
-      <div className="mr-[4rem] mt-[5rem]">
+    <section className=" flex m-auto  overflow-hidden">
+      <div className="  lg:w-[50%] md:w-[50%] m-auto md:px-[4rem] lg:px-[4rem] w-[60%]  mt-[5rem]">
+        
         <h1 className="text-2xl font-semibold mb-4">Register</h1>
 
         <form onSubmit={submitHandler} className="container w-[40rem]">
@@ -63,7 +64,7 @@ const Register = () => {
             <input
               type="text"
               id="name"
-              className="mt-1 p-2 border rounded w-[15rem]"
+              className="mt-1 p-2 border rounded w-[11rem] md:w-[15rem] lg:w-[15rem]"
               placeholder="Enter name"
               value={username}
               onChange={(e) => setName(e.target.value)}
@@ -80,7 +81,7 @@ const Register = () => {
             <input
               type="email"
               id="email"
-              className="mt-1 p-2 border rounded w-[15rem]"
+              className="mt-1 p-2 border rounded w-[11rem] md:w-[15rem] lg:w-[15rem]"
               placeholder="Enter email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -97,7 +98,7 @@ const Register = () => {
             <input
               type="password"
               id="password"
-              className="mt-1 p-2 border rounded w-[15rem]"
+              className="mt-1 p-2 border rounded w-[11rem] md:w-[15rem] lg:w-[15rem]"
               placeholder="Enter password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -114,7 +115,7 @@ const Register = () => {
             <input
               type="password"
               id="confirmPassword"
-              className="mt-1 p-2 border rounded w-[15rem]"
+              className="mt-1 p-2 border rounded w-[11rem] md:w-[15rem] lg:w-[15rem]"
               placeholder="Confirm password"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
@@ -143,11 +144,12 @@ const Register = () => {
             </Link>
           </p>
         </div>
-      </div>
+        </div>
+      
       <img
         src="https://images.unsplash.com/photo-1576502200916-3808e07386a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2065&q=80"
         alt=""
-        className="h-[65rem] lg:w-[50%] w-[100%] lg:block md:block hidden rounded-lg"
+        className="h-[65rem]  w-[100%] lg:block md:block hidden rounded-lg"
       />
     </section>
   );

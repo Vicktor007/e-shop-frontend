@@ -26,7 +26,7 @@ const Header = () => {
             ))}
           
         </div>
-        <div className="max-w-3xl hidden lg:block ">
+        <div className="max-w-3xl mt-[1rem] hidden lg:block ">
         <ProductCarousel />
         </div>
       </div>

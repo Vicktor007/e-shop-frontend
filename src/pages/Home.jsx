@@ -10,7 +10,7 @@ const Home = () => {
   const { data, isLoading, isError } = useGetProductsQuery({ keyword });
 
   return (
-    <>
+    <section className="pt-5">
       {!keyword ? <Header /> : null}
       {isLoading ? (
         <Loader />
@@ -46,7 +46,7 @@ const Home = () => {
           </div>
         </>
       )}
-    </>
+    </section>
   );
 };
 
