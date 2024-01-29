@@ -85,9 +85,9 @@ const Profile = () => {
 
   
   return (
-    <div className="container mx-auto p-4 ">
-      <div className="flex justify-center align-center md:flex mt-[8rem] md:space-x-4">
-        <div className="md:w-2/3">
+    <div className="container  mx-auto p-4 ">
+      <div className="flex justify-center  w-[100%] lg:w-[20rem] md:w-[30rem] m-auto align-center md:flex mt-[8rem] md:space-x-4">
+        <div className="w-full">
           <h2 className="text-2xl font-semibold mb-4">Update Profile</h2>
           <form onSubmit={submitHandler}>
             <div className="mb-4">
