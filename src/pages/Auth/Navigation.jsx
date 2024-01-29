@@ -6,6 +6,7 @@ import {
   AiOutlineUserAdd,
   AiOutlineShoppingCart,
 } from "react-icons/ai";
+import { IoPersonCircleOutline } from "react-icons/io5";
 import { FaHeart, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -67,17 +68,17 @@ const Navigation = () => {
       style={{ zIndex: 999999 }}
       className={`${
         showSidebar ? "flex" : "hidden"
-      }  md:flex lg:flex md:w-[15%] flex-col justify-around p-4 text-white bg-[#000] w-[5%] lg:hover:w-[15%] h-[100vh]  fixed `}
+      }  md:flex lg:flex md:w-[15%] flex-col justify-center p-4 text-white bg-[#000] w-[5%] lg:hover:w-[15%] h-[100vh]  fixed `}
       id="navigation-container"
     >
-      <div className="flex flex-col justify-center space-y-4">
+      <div className="flex flex-col justify-center  ">
         <Link
           to="/"
           className="flex relative"
         >
-          <div className="flex items-center transition-transform transform hover:translate-x-2">
-          <AiOutlineHome className="mr-2 mt-[3rem]" size={26} />
-          <span className="hidden nav-item-name mt-[3rem]">HOME</span>{" "}
+          <div className="flex  h-[4rem] items-center transition-transform transform hover:translate-x-2">
+          <AiOutlineHome className="mr-2 " size={26} />
+          <span className="hidden nav-item-name  ">HOME</span>{" "}
           </div>
         </Link>
 
@@ -86,16 +87,16 @@ const Navigation = () => {
           className="flex relative"
         >
           
-          <div className="flex items-center transition-transform transform hover:translate-x-2">
-          <AiOutlineShopping className="mr-2 mt-[3rem]" size={26} />
-          <span className="hidden nav-item-name mt-[3rem]">SHOP</span>{" "}
+          <div className="flex items-center h-[4rem] transition-transform transform hover:translate-x-2">
+          <AiOutlineShopping className="mr-2 " size={26} />
+          <span className="hidden nav-item-name ">SHOP</span>{" "}
           </div>
         </Link>
 
         <Link to="/cart" className="flex relative">
-          <div className="flex items-center transition-transform transform hover:translate-x-2">
-            <AiOutlineShoppingCart className="mt-[3rem] mr-2" size={26} />
-            <span className="hidden nav-item-name mt-[3rem]">Cart</span>{" "}
+          <div className="flex items-center h-[4rem] transition-transform transform hover:translate-x-2">
+            <AiOutlineShoppingCart className=" mr-2" size={26} />
+            <span className="hidden nav-item-name ">Cart</span>{" "}
           </div>
 
           <div className="absolute top-9">
@@ -109,10 +110,10 @@ const Navigation = () => {
           </div>
         </Link>
 
-        <Link to="/favorite" className="flex relative">
-          <div className="flex items-center transition-transform transform hover:translate-x-2">
-            <FaHeart className="mt-[3rem] mr-2" size={20} />
-            <span className="hidden nav-item-name mt-[3rem]">
+        <Link to="/favorite" className="flex  pl-[2px] relative">
+          <div className="flex items-center h-[4rem] transition-transform transform hover:translate-x-2">
+            <FaHeart className=" mr-2 " size={20} />
+            <span className="hidden nav-item-name ">
               Favorites
             </span>{" "}
             <FavoritesCount />
@@ -121,22 +122,25 @@ const Navigation = () => {
         {
           userInfo && (
             <Link to="/userOrder" className="flex relative">
-          <div className="flex items-center transition-transform transform hover:translate-x-2">
-          <LuPackageCheck className="mt-[3rem] mr-2" size={26} />
-          <span className="hidden nav-item-name mt-[3rem]">Orders</span>{" "}
+          <div className="flex items-center h-[4rem] transition-transform transform hover:translate-x-2">
+          <LuPackageCheck className=" mr-2" size={26} />
+          <span className="hidden nav-item-name ">Orders</span>{" "}
           </div>
         </Link>
           )
         }
       </div>
 
-      <div className="relative">
+      <div className="relative mt-[2rem]">
         <button
           onClick={toggleDropdown}
           className="flex items-center text-gray-800 focus:outline-none"
         >
           {userInfo ? (
-            <span className="text-white mb-5">{userInfo.username}</span>
+            <div className="flex ">
+            <IoPersonCircleOutline className="text-white" size={26} />
+            <span className="text-white  ml-1 nav-item-name">{userInfo.username}</span>
+            </div>
           ) : (
             <></>
           )}
@@ -144,7 +148,7 @@ const Navigation = () => {
 
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className={`h-4 w-4 ml-1 mb-4 nav-item-name ${
+              className={`h-4 w-4 ml-1 mt-[0.2rem] nav-item-name ${
                 dropdownOpen ? "transform rotate-180" : ""
               }`}
               fill="none"
