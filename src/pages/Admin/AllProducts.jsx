@@ -3,6 +3,7 @@ import moment from "moment";
 import { useAllProductsQuery } from "../../redux/api/productApiSlice";
 import { useEffect, useState } from "react";
 import Message from "../../components/Message";
+import Loader from "../../components/Loader";
 
 
 const AllProducts = () => {
@@ -13,7 +14,7 @@ const AllProducts = () => {
     refetch()
   },[])
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Loader/>;
   }
 
   if (error) {
