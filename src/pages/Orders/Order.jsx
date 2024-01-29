@@ -22,7 +22,6 @@ const Order = () => {
     error,
   } = useGetOrderDetailsQuery(orderId);
 
-  console.log(order)
   const [payOrder, { isLoading: loadingPay }] = usePayOrderMutation();
   const [deliverOrder, { isLoading: loadingDeliver }] =
     useDeliverOrderMutation();
@@ -89,6 +88,7 @@ const Order = () => {
   const deliverHandler = async () => {
     await deliverOrder(orderId);
     refetch();
+    window.location.reload()
   };
 
   useEffect(() => {
