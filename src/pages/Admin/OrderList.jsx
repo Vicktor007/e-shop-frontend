@@ -22,7 +22,7 @@ const OrderList = () => {
           {error?.data?.message || error.error}
         </Message>
       ) : (
-        <table className="container mx-auto">
+        <table className=" w-[100%] lg:w-[90%]  mx-auto">
         
 
           <thead className="w-full border">
@@ -32,8 +32,8 @@ const OrderList = () => {
               <th className="text-center lg:text-[1rem] text-[0.7rem] pl-1">USER</th>
               <th className="text-center lg:text-[1rem] text-[0.7rem]">DATE</th>
               <th className="text-center lg:text-[1rem] text-[0.7rem] pl-1">TOTAL</th>
-              <th className="text-left needed pl-1">PAID</th>
-              <th className="text-left needed pl-1">DELIVERED</th>
+              <th className="text-center needed lg:text-[1rem] text-[0.7rem] pl-1">PAID</th>
+              <th className="text-center needed lg:text-[1rem] text-[0.7rem] pl-1">DELIVERED</th>
               <th></th>
             </tr>
           </thead>
@@ -58,13 +58,13 @@ const OrderList = () => {
 
                 <td className="text-center lg:text-[1rem] text-[0.8rem]">$ {order.totalPrice}</td>
 
-                <td className="py-2 needed">
+                <td className="needed">
                   {order.isPaid ? (
-                    <p className="p-1 text-center bg-green-400 w-[6rem] rounded-full">
+                    <p className="p-1 m-auto text-center lg:text-[1rem] text-[0.8rem] text-neutral-950 bg-green-400 w-[6rem] rounded-full">
                       Completed
                     </p>
                   ) : (
-                    <p className="p-1 text-center bg-red-400 w-[6rem] rounded-full">
+                    <p className="p-1 m-auto text-center lg:text-[1rem] text-[0.8rem] text-neutral-950 bg-red-400 w-[6rem] rounded-full">
                       Pending
                     </p>
                   )}
@@ -72,11 +72,11 @@ const OrderList = () => {
 
                 <td className="px-2 needed py-2">
                   {order.isDelivered ? (
-                    <p className="p-1 text-center bg-green-400 w-[6rem] rounded-full">
+                    <p className="p-1 m-auto text-center lg:text-[1rem] text-[0.8rem] text-neutral-950 bg-green-400 w-[6rem] rounded-full">
                       Completed
                     </p>
                   ) : (
-                    <p className="p-1 text-center bg-red-400 w-[6rem] rounded-full">
+                    <p className=" m-auto text-center lg:text-[1rem] text-[0.8rem] bg-red-400 w-[6rem] text-neutral-950 rounded-full">
                       Pending
                     </p>
                   )}
