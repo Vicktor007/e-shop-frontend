@@ -42,9 +42,9 @@
     width: 10rem;
     overflow: hidden;
   }
+  .nav-item-name {
+    display: block;
+    transition: opacity 0.2s ease-in-out; /* Add opacity transition */
+  }
 }
 
-.nav-item-name {
-  display: block;
-  transition: opacity 0.2s ease-in-out; /* Add opacity transition */
-}
