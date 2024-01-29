@@ -30,11 +30,11 @@ const UserOrder = () => {
           <thead className="w-full border">
             <tr className="mb-[5rem]">
               <th className="text-center lg:text-[1rem] text-[0.7rem]">ITEMS</th>
-              <th className="text-center needed ">ID</th>
+              <th className="text-center lg:text-[1rem] text-[0.7rem] needed ">ID</th>
               <th className="text-center lg:text-[1rem] text-[0.7rem] w-[8rem]">DATE</th>
-              <th className="text-center lg:text-[1rem] text-[0.7rem]  w-[8rem]">TOTAL</th>
-              <th className="text-center  w-[8rem] needed ">PAID</th>
-              <th className="text-center w-[8rem] needed">DELIVERED</th>
+              <th className="text-center  lg:text-[1rem] text-[0.7rem]  w-[8rem]">TOTAL</th>
+              <th className="text-center lg:text-[1rem] text-[0.7rem]  w-[8rem] needed ">PAID</th>
+              <th className="text-center lg:text-[1rem] text-[0.7rem] w-[8rem] needed">DELIVERED</th>
               <th></th>
             </tr>
           </thead>
@@ -60,24 +60,24 @@ const UserOrder = () => {
 
                 <td className="py-2 needed">
                   {order.isPaid ? (
-                    <p className="p-1 text-center bg-green-400 w-[6rem] rounded-full">
-                      Completed
+                    <p className="p-1 text-center bg-green-400  w-[6rem] lg:text-[1rem] text-[0.8rem] text-neutral-950 rounded-full">
+                      <b>Completed</b>
                     </p>
                   ) : (
-                    <p className="p-1 text-center bg-red-400 w-[6rem] rounded-full">
-                      Pending
+                    <p className="p-1 text-center bg-red-400  w-[6rem] lg:text-[1rem] text-[0.8rem] text-neutral-950 rounded-full">
+                      <b>Pending</b>
                     </p>
                   )}
                 </td>
 
-                <td className="px-2 py-2 needed">
+                <td className="py-2 needed">
                   {order.isDelivered ? (
-                    <p className="p-1 text-center bg-green-400 w-[6rem] rounded-full">
-                      Completed
+                    <p className="p-1 text-center bg-green-400  w-[6rem] lg:text-[1rem] text-[0.8rem] text-neutral-950 rounded-full">
+                      <b>Completed</b>
                     </p>
                   ) : (
-                    <p className="p-1 text-center bg-red-400 w-[6rem] rounded-full">
-                      Pending
+                    <p className="p-1 text-center bg-red-400  w-[6rem] lg:text-[1rem] text-[0.8rem] text-neutral-950 rounded-full">
+                      <b>Pending</b>
                     </p>
                   )}
                 </td>

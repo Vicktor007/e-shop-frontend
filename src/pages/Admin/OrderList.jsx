@@ -61,11 +61,11 @@ const OrderList = () => {
                 <td className="needed">
                   {order.isPaid ? (
                     <p className="p-1 m-auto text-center lg:text-[1rem] text-[0.8rem] text-neutral-950 bg-green-400 w-[6rem] rounded-full">
-                      Completed
+                      <b>Completed</b>
                     </p>
                   ) : (
                     <p className="p-1 m-auto text-center lg:text-[1rem] text-[0.8rem] text-neutral-950 bg-red-400 w-[6rem] rounded-full">
-                      Pending
+                      <b>Pending</b>
                     </p>
                   )}
                 </td>
@@ -73,11 +73,11 @@ const OrderList = () => {
                 <td className="px-2 needed py-2">
                   {order.isDelivered ? (
                     <p className="p-1 m-auto text-center lg:text-[1rem] text-[0.8rem] text-neutral-950 bg-green-400 w-[6rem] rounded-full">
-                      Completed
+                      <b>Completed</b>
                     </p>
                   ) : (
                     <p className=" m-auto text-center lg:text-[1rem] text-[0.8rem] bg-red-400 w-[6rem] text-neutral-950 rounded-full">
-                      Pending
+                      <b>Pending</b>
                     </p>
                   )}
                 </td>
