@@ -87,9 +87,9 @@ const Shipping = () => {
               onChange={(e) => setCountry(e.target.value)}
             />
           </div>
-          <div className="mb-4">
-            <label className="block text-gray-400">Select Method</label>
-            <div className="mt-2">
+          <div className="mb-[4rem]">
+            <label className="block text-2xl font-semibold ">Select Method</label>
+            <div className="mt-2 flex flex-col">
               <label className="inline-flex items-center">
                 <input
                   type="radio"
@@ -102,7 +102,7 @@ const Shipping = () => {
 
                 <span className="ml-2">PayPal or Credit Card</span>
               </label>
-              <label className="inline-flex ml-4 items-center">
+              <label className="inline-flex items-center">
                 <input
                   type="radio"
                   className="form-radio text-pink-500"
@@ -117,7 +117,7 @@ const Shipping = () => {
           </div>
 
           <button
-            className="bg-pink-500 text-white py-2 px-4 rounded-full text-lg w-full"
+            className="bg-pink-500 mb-[4rem] text-white py-2 px-4 rounded-full text-lg w-full"
             type="submit"
             disabled={!paymentMethod}
           >
