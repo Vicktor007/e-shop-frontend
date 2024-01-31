@@ -76,7 +76,7 @@ const OrderList = () => {
                       <b>Completed</b>
                     </p>
                   ) : (
-                    <p className=" m-auto text-center lg:text-[1rem] text-[0.8rem] bg-red-400 w-[6rem] text-neutral-950 rounded-full">
+                    <p className="p-1 m-auto text-center lg:text-[1rem] text-[0.8rem] text-neutral-950 bg-red-400 w-[6rem] rounded-full">
                       <b>Pending</b>
                     </p>
                   )}
