@@ -49,8 +49,8 @@ const Register = () => {
 
   return (
     <section className=" flex m-auto  overflow-hidden">
-      <div className=" testing  lg:w-[50%] md:w-[50%] m-auto md:px-[4rem] lg:px-[4rem] w-[60%]  mt-[5rem]">
-        <div className="testing w-[100%] lg:w-[60%] md:w-[70%] m-auto">
+      <div className="   lg:w-[50%] md:w-[50%] m-auto md:px-[4rem] lg:px-[4rem] w-[60%]  mt-[5rem]">
+        <div className=" w-[100%] lg:w-[60%] md:w-[70%] m-auto">
         <h1 className="text-2xl font-semibold mb-4">Register</h1>
 
         <form onSubmit={submitHandler} className="container w-[40rem]">
