@@ -222,7 +222,7 @@ const Order = () => {
               </div>
             )}
           </div>
-        )}</div>) : ("Stripe Payment")}
+        )}</div>) : ("Stripe Payment: Feature Coming Soon!")}
 
         
         {/* {!order.isPaid && (

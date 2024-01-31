@@ -119,6 +119,7 @@ const Shipping = () => {
           <button
             className="bg-pink-500 text-white py-2 px-4 rounded-full text-lg w-full"
             type="submit"
+            disabled={!paymentMethod}
           >
             Continue
           </button>
