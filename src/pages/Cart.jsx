@@ -30,9 +30,9 @@ const Cart = () => {
 
   return (
     <>
-      <div className="container  overflow-hidden flex justify-around items-start flex-wrap mx-auto mt-8">
+      <div className="container  overflow-hidden flex justify-around items-start flex-wrap mx-auto">
         {cartItems.length === 0 ? (
-          <div>
+          <div className="mt-8">
             Your cart is empty <Link to="/shop">Go To Shop</Link>
           </div>
         ) : (

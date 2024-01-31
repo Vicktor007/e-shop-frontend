@@ -33,7 +33,7 @@ const UserOrder = () => {
               <th className="text-center lg:text-[1rem] text-[0.7rem] needed ">ID</th>
               <th className="text-center lg:text-[1rem] text-[0.7rem] w-[8rem]">DATE</th>
               <th className="text-center  lg:text-[1rem] text-[0.7rem]  w-[8rem]">TOTAL</th>
-              <th className="text-center lg:text-[1rem] text-[0.7rem]  w-[8rem] needed ">PAID</th>
+              <th className="text-center lg:text-[1rem] text-[0.7rem]   w-[8rem] needed ">PAID</th>
               <th className="text-center lg:text-[1rem] text-[0.7rem] w-[8rem] needed">DELIVERED</th>
               <th></th>
             </tr>
@@ -50,7 +50,7 @@ const UserOrder = () => {
                   />
                 </td>
                 
-                <td className="needed text-center">{order._id}</td>
+                <td className="needed  w-[4rem] pr-8 text-center">{order._id}</td>
 
                 <td className="text-center lg:text-[1rem] text-[0.8rem]">
                   {order.createdAt ? order.createdAt.substring(0, 10) : "N/A"}
@@ -58,32 +58,32 @@ const UserOrder = () => {
 
                 <td className="text-center lg:text-[1rem] text-[0.8rem]">$ {order.totalPrice}</td>
 
-                <td className="py-2 needed">
+                <td className="py-2 px-4   needed">
                   {order.isPaid ? (
-                    <p className="p-1 text-center bg-green-400  w-[6rem] lg:text-[1rem] text-[0.8rem] text-neutral-950 rounded-full">
+                    <p className="p-1 m-auto text-center bg-green-400  w-[6rem] lg:text-[1rem] text-[0.8rem] text-neutral-950 rounded-full">
                       <b>Completed</b>
                     </p>
                   ) : (
-                    <p className="p-1 text-center bg-red-400  w-[6rem] lg:text-[1rem] text-[0.8rem] text-neutral-950 rounded-full">
+                    <p className="p-1 m-auto text-center bg-red-400  w-[6rem] lg:text-[1rem] text-[0.8rem] text-neutral-950 rounded-full">
                       <b>Pending</b>
                     </p>
                   )}
                 </td>
 
-                <td className="py-2 needed">
+                <td className="py-2 px-4 needed">
                   {order.isDelivered ? (
-                    <p className="p-1 text-center bg-green-400  w-[6rem] lg:text-[1rem] text-[0.8rem] text-neutral-950 rounded-full">
+                    <p className="p-1 m-auto text-center bg-green-400  w-[6rem] lg:text-[1rem] text-[0.8rem] text-neutral-950 rounded-full">
                       <b>Completed</b>
                     </p>
                   ) : (
-                    <p className="p-1 text-center bg-red-400  w-[6rem] lg:text-[1rem] text-[0.8rem] text-neutral-950 rounded-full">
+                    <p className="p-1 m-auto text-center bg-red-400  w-[6rem] lg:text-[1rem] text-[0.8rem] text-neutral-950 rounded-full">
                       <b>Pending</b>
                     </p>
                   )}
                 </td>
 
-                <td>
-                  <Link className="px-4 py-2 text-center text-[0.8rem] lg:text-[1rem] bg-slate-800 hover:bg-slate-600 w-[6rem] rounded-full" to={`/order/${order._id}`}>
+                <td className="m-auto">
+                  <Link className="px-4 pb-2 pt-1  text-center text-[0.8rem] lg:text-[1rem] bg-slate-800 hover:bg-slate-600 w-[6rem] rounded-full" to={`/order/${order._id}`}>
                     <button><b>details</b></button>
                   </Link>
                 </td>

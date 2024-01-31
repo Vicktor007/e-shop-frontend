@@ -68,7 +68,7 @@ const Navigation = () => {
       style={{ zIndex: 999999 }}
       className={`${
         showSidebar ? "flex" : "hidden"
-      }  md:flex lg:flex md:w-[15%] flex-col justify-center p-4 text-white bg-[#000] w-[5%] lg:hover:w-[15%] h-[100vh]  fixed `}
+      }   md:flex lg:flex md:w-[15%] flex-col justify-center p-4 text-white bg-[#000] w-[5%] lg:hover:w-[15%] h-[100vh]  fixed `}
       id="navigation-container"
     >
       <div className="flex flex-col justify-center  ">
@@ -77,7 +77,7 @@ const Navigation = () => {
           className="flex relative"
         >
           <div className="flex  h-[4rem] items-center transition-transform transform hover:translate-x-2">
-          <AiOutlineHome className="mr-2 " size={26} />
+          <AiOutlineHome className="mr-2  " size={26} />
           <span className="hidden nav-item-name  ">HOME</span>{" "}
           </div>
         </Link>
@@ -88,14 +88,14 @@ const Navigation = () => {
         >
           
           <div className="flex items-center h-[4rem] transition-transform transform hover:translate-x-2">
-          <AiOutlineShopping className="mr-2 " size={26} />
+          <AiOutlineShopping className="mr-2  " size={26} />
           <span className="hidden nav-item-name ">SHOP</span>{" "}
           </div>
         </Link>
 
         <Link to="/cart" className="flex relative">
           <div className="flex items-center h-[4rem] transition-transform transform hover:translate-x-2">
-            <AiOutlineShoppingCart className=" mr-2" size={26} />
+            <AiOutlineShoppingCart className=" mr-2 " size={26} />
             <span className="hidden nav-item-name ">Cart</span>{" "}
           </div>
 
@@ -112,7 +112,7 @@ const Navigation = () => {
 
         <Link to="/favorite" className="flex  pl-[2px] relative">
           <div className="flex items-center h-[4rem] transition-transform transform hover:translate-x-2">
-            <FaHeart className=" mr-2 " size={20} />
+            <FaHeart className=" mr-2  " size={20} />
             <span className="hidden nav-item-name ">
               Favorites
             </span>{" "}
@@ -123,7 +123,7 @@ const Navigation = () => {
           userInfo && (
             <Link to="/userOrder" className="flex relative">
           <div className="flex items-center h-[4rem] transition-transform transform hover:translate-x-2">
-          <LuPackageCheck className=" mr-2" size={26} />
+          <LuPackageCheck className=" mr-2 " size={26} />
           <span className="hidden nav-item-name ">Orders</span>{" "}
           </div>
         </Link>
@@ -134,7 +134,7 @@ const Navigation = () => {
       <div className="relative mt-[2rem]">
         <button
           onClick={toggleDropdown}
-          className="flex items-center text-gray-800 focus:outline-none"
+          className="flex items-center text-gray-800 focus:outline-none mt-[2rem]"
         >
           {userInfo ? (
             <div className="flex ">
