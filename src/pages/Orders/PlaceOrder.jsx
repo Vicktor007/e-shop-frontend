@@ -39,6 +39,7 @@ const PlaceOrder = () => {
       navigate(`/order/${res._id}`);
     } catch (error) {
       toast.error(error);
+      console.log(error)
     }
   };
 

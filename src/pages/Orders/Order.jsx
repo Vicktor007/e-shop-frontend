@@ -11,6 +11,9 @@ import {
   useGetPaypalClientIdQuery,
   usePayOrderMutation,
 } from "../../redux/api/orderApiSlice";
+import moment from "moment";
+
+
 
 const Order = () => {
   const { id: orderId } = useParams();
@@ -64,6 +67,7 @@ const Order = () => {
       try {
         await payOrder({ orderId, details });
         refetch();
+        window.location.reload()
         toast.success("Order is paid");
       } catch (error) {
         toast.error(error?.data?.message || error.message);
@@ -177,9 +181,9 @@ const Order = () => {
           </p>
 
           {order.isPaid ? (
-            <div className="bg-green-100 text-green-800 p-4 rounded">Paid on {order.paidAt}</div>
+            <div className="bg-green-100 text-green-800 p-4 rounded">Paid on {moment(order.paidAt).format("MMMM Do YYYY, h:mm:ss a")}</div>
           ) : (
-            <div className="bg-red-100 text-red-800 p-4 rounded">Not paid</div>
+            <div className="bg-red-100 text-red-800 p-4 rounded">Not paid {moment(order.createdAt).format("MMMM Do YYYY, h:mm:ss a")}</div>
           )}
         </div>
 
