@@ -54,7 +54,8 @@ const Navigation = () => {
   };
 
   return (
-    <div className={`${showSidebar && "nav-container"}`} onClick={toggleMainBar}>
+    <>
+    <div className={`${showSidebar && "nav-container"}`} onClick={toggleMainBar}></div>
     <button
       style={{ zIndex: 9999999 }}
         className={`${
@@ -83,6 +84,7 @@ const Navigation = () => {
         <Link
           to="/"
           className="flex relative"
+          onClick={toggleMainBar}
         >
           <div className="flex  h-[4rem] items-center transition-transform transform hover:translate-x-2">
           <AiOutlineHome className="mr-2  " size={26} />
@@ -93,6 +95,7 @@ const Navigation = () => {
         <Link
           to="/shop"
           className="flex relative"
+          onClick={toggleMainBar}
         >
           
           <div className="flex items-center h-[4rem] transition-transform transform hover:translate-x-2">
@@ -101,7 +104,7 @@ const Navigation = () => {
           </div>
         </Link>
 
-        <Link to="/cart" className="flex relative">
+        <Link to="/cart" className="flex relative" onClick={toggleMainBar}>
           <div className="flex items-center h-[4rem] transition-transform transform hover:translate-x-2">
             <AiOutlineShoppingCart className=" mr-2 " size={26} />
             <span className="hidden nav-item-name ">Cart</span>{" "}
@@ -118,7 +121,7 @@ const Navigation = () => {
           </div>
         </Link>
 
-        <Link to="/favorite" className="flex  pl-[2px] relative">
+        <Link to="/favorite" className="flex  pl-[2px] relative" onClick={toggleMainBar}>
           <div className="flex items-center h-[4rem] transition-transform transform hover:translate-x-2">
             <FaHeart className=" mr-2  " size={20} />
             <span className="hidden nav-item-name ">
@@ -129,7 +132,7 @@ const Navigation = () => {
         </Link>
         {
           userInfo && (
-            <Link to="/userOrder" className="flex relative">
+            <Link to="/userOrder" className="flex relative" onClick={toggleMainBar}>
           <div className="flex items-center h-[4rem] transition-transform transform hover:translate-x-2">
           <LuPackageCheck className=" mr-2 " size={26} />
           <span className="hidden nav-item-name ">Orders</span>{" "}
@@ -174,7 +177,7 @@ const Navigation = () => {
         </button>
 
         {dropdownOpen && userInfo && (
-          <ul
+          <ul onClick={toggleMainBar}
           style={{ zIndex: 1009999 }}
             className={`absolute nav-item-name w-[8rem] right-0 bottom-[3rem] mt-2  space-y-2 bg-white text-gray-600 ${
               !userInfo.isAdmin ? "-top-30" : "-top-90"
@@ -186,6 +189,7 @@ const Navigation = () => {
                   <Link
                     to="/admin/dashboard"
                     className="block px-4 py-2  hover:bg-gray-100"
+                    
                   >
                    <b>Dashboard</b>
                   </Link>
@@ -194,6 +198,7 @@ const Navigation = () => {
                   <Link
                     to="/admin/allproductslist"
                     className="block px-4 py-2  hover:bg-gray-100"
+                    
                   >
                     <b>All Products</b>
                   </Link>
@@ -202,6 +207,7 @@ const Navigation = () => {
                   <Link
                     to="/admin/categorylist"
                     className="block px-4 py-2  hover:bg-gray-100"
+                    
                   >
                      <b>Category</b>
                   </Link>
@@ -210,6 +216,7 @@ const Navigation = () => {
                   <Link
                     to="/admin/orderlist"
                     className="block px-4 py-2  hover:bg-gray-100"
+                    
                   >
                      <b>Orders</b>
                   </Link>
@@ -218,6 +225,7 @@ const Navigation = () => {
                   <Link
                     to="/admin/userlist"
                     className="block px-4 py-2  hover:bg-gray-100"
+                    
                   >
                     <b>Users</b>
                   </Link>
@@ -226,7 +234,7 @@ const Navigation = () => {
             )}
 
             <li>
-              <Link to="/profile" className="block px-4 py-2  hover:bg-gray-100">
+              <Link to="/profile" className="block px-4 py-2  hover:bg-gray-100" onClick={toggleMainBar}>
                 <b>Profile</b>
               </Link>
             </li>
@@ -241,14 +249,14 @@ const Navigation = () => {
           </ul>
         )}
         {!userInfo && (
-          <ul>
+          <ul onClick={toggleMainBar}>
 
        
             <li>
             <Link
           to="/login"
           className="flex relative"
-        >
+          >
           <div className="flex items-center transition-transform transform hover:translate-x-2">
           <AiOutlineLogin className="mr-2 mt-[3rem]" size={26} />
           <span className="hidden nav-item-name mt-[3rem]">LOGIN</span>{" "}
@@ -259,6 +267,7 @@ const Navigation = () => {
             <Link
            to="/register"
           className="flex relative"
+          
         >
           <div className="flex items-center transition-transform transform hover:translate-x-2">
           <AiOutlineUserAdd className="mr-2 mt-[3rem]" size={26} />
@@ -271,7 +280,7 @@ const Navigation = () => {
         )}
       </div>
     </div>
-    </div>
+    </>
   );
 };
 

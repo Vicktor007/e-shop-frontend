@@ -93,7 +93,7 @@ const Shop = () => {
     <>
     
     <button
-      style={{ zIndex: 999999 }}
+      style={{ zIndex: 99999 }}
         className={`${
           showSidebar ? "top-4 left-[20rem]" : "top-4 left-[4rem]"
         } lg:hidden  block bg-[#3b3a3a] p-2 fixed rounded-lg `}
@@ -158,7 +158,7 @@ const Shop = () => {
 
             <div className="p-5">
   {uniqueBrands?.map((brand) => (
-    // Use brand as the key for the React.Fragment element
+    
     <React.Fragment key={brand}>
       <div className="flex items-enter mr-4 mb-5">
         <input
