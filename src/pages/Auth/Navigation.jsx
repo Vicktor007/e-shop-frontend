@@ -46,7 +46,7 @@ const Navigation = () => {
   };
 
   return (
-    <>
+    <div className={`${showSidebar && "nav-container"}`} onClick={toggleSideBar}>
     <button
       style={{ zIndex: 9999999 }}
         className={`${
@@ -263,7 +263,7 @@ const Navigation = () => {
         )}
       </div>
     </div>
-    </>
+    </div>
   );
 };
 
