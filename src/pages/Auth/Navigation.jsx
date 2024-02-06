@@ -30,6 +30,14 @@ const Navigation = () => {
   const toggleSideBar = () => {
     setShowSidebar(!showSidebar);
   };
+
+  const toggleMainBar = () => {
+    if (showSidebar) {
+      setShowSidebar(false);
+    }
+  };
+  
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -46,7 +54,7 @@ const Navigation = () => {
   };
 
   return (
-    <div className={`${showSidebar && "nav-container"}`} onClick={toggleSideBar}>
+    <div className={`${showSidebar && "nav-container"}`} onClick={toggleMainBar}>
     <button
       style={{ zIndex: 9999999 }}
         className={`${
@@ -68,7 +76,7 @@ const Navigation = () => {
       style={{ zIndex: 999999 }}
       className={`${
         showSidebar ? "flex" : "hidden"
-      }   md:flex lg:flex md:w-[15%] flex-col justify-center p-4 text-white bg-[#000] w-[5%] lg:hover:w-[15%] h-[100vh]  fixed `}
+      }  md:flex lg:flex md:w-[15%] flex-col justify-center p-4 text-white bg-[#000] w-[5%] lg:hover:w-[15%] h-[100vh]  fixed `}
       id="navigation-container"
     >
       <div className="flex flex-col justify-center  ">
