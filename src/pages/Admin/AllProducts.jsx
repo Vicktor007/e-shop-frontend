@@ -38,17 +38,17 @@ const AllProducts = () => {
   return (
     <>
       <div className="container  m-auto">
-        <div className="flex flex-col   md:flex-row">
+        <div className="flex flex-col justify-center  md:flex-row">
           <div className="p-3">
             <div className="ml-[2rem] text-xl text-center font-bold h-12">
               All Products ({filteredProducts.length})
             </div>
             
-            <div className="one">
+            <div className="one mb-3 flex justify-center items-center">
             <input
               type="text"
               placeholder="Search by name, category, or brand"
-              className="p-4 mb-3 w-[90%] lg:w-[30%] md:w-[50%] border rounded-lg bg-[#101011] text-white ]"
+              className="p-4 mb-3 w-[90%] lg:w-[30%] md:w-[50%] border rounded-lg bg-[#101011] text-white text-center ]"
               value={searchTerm}
               onChange={handleSearchChange}
             />
