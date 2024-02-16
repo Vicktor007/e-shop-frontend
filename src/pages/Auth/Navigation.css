@@ -35,9 +35,12 @@
   display: none;
   transition: opacity 0.2s ease-in-out; /* Add opacity transition */
 }
+.nav-container {
+  background-color: transparent;
+  display: none;
+}
 
-
-@media only screen and (max-width: 770px) {
+@media only screen and (max-width: 760px) {
   #navigation-container {
     width: 10rem;
     overflow: hidden;
@@ -47,9 +50,7 @@
     transition: opacity 0.2s ease-in-out; /* Add opacity transition */
   }
 
-  .nav-container {
-    background-color: transparent;
-  }
+  
 }
 
 .nav-container {
